@@ -1,0 +1,513 @@
+﻿
+@{
+    ViewBag.Title = "ProductDetails";
+}
+
+
+<link rel="stylesheet" href="~/css/productdetail.css">
+
+<style>
+   .footer_custom{
+     margin-bottom:-200px
+   }
+    @@media screen and (max-width: 980px) {
+        .image_stack__nav {
+            right: 0px;
+            bottom: 10px;
+            display: none;
+        }
+    }
+
+   select option {
+     background-color: #fff;
+  }
+</style>
+
+<body>
+    <!-- inner-hero-section start -->
+    <!-- inner-hero-section end -->
+    <!-- privacy-section start -->
+    <div class="site__content_container">
+        <section class="site__featured_container privacy-section pt-150 pb-150">
+            <div class="site__wrapper js_fixed_product">
+                <div class="message_banner__container js_promo_banner">
+                    <div class="message_banner">
+                        <div class="message_banner__text js_promo_banner_text"></div><i class="message_banner__close ts-icon-close"></i>
+                    </div>
+                </div>
+                <div class="js-campaign-title">
+                    <h1 class="campaign__name display--mobile h4" id="prodTitlemob"> DummyProduct_1</h1>
+                    <div class="campaign__store display--mobile">
+                        Created by
+                        <span class="campaign__store_link" id="createdUsermob">TagbitUser1</span>
+                    </div>
+                </div>
+                <div class="image_stack__container___wrapper">
+                    <div class="image_stack__container js_image_stack active">
+                        <div class="image_stack__inner js_image_stack_inner swipe">
+                            <div class="image_stack__images swipe-wrap">
+                                <div class="image_stack__image_wrap image_stack__image_wrap--active" data-side="front">
+                                    <!--<a href="/getMyOtherProductImage?id=<%=alldata.front_image%>">-->
+                                    <img alt="" id="productImg"style="width:350px;height:350px" class="laftImg">
+                                    <!--</a>-->
+                                </div>
+                            </div>
+                            <!-- <div class="campaign_badges_container">
+                              <div class="top_badges">
+                                <div class="campaign_badge badge__rush_eligible hidden">
+                                  <div class="tooltip--bottomleft" data-tooltip="Want it fast? Choose rush shipping during checkout and get your order printed immediately and shipped via expedited service!">
+                                    <img src="/getMyOtherProductImage?id=<%=alldata.back_image%>" alt="Rush badge"></div>
+                                </div>
+                              </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="campaign__column--product">
+                    <!-- <div class="zoom_window__container ">
+                      <div class="zoomWindow" style="background-size: auto; background-color: rgb(255, 255, 255); background-repeat: no-repeat; background-image: url('/getMyOtherProductImage?id=<%=alldata.back_image%>'); background-position: -43.8558% -58.3333%;">
+                      </div>
+                    <div class="zoomWindow" style="background-size: auto; background-color: rgb(255, 255, 255); background-repeat: no-repeat; background-image: url(&quot;/getMyOtherProductImage?id=<%=alldata.back_image%>&quot;); background-position: -63.1266% 50.0651%;"></div></div> -->
+                    <h1 class="campaign__name display--desktop h2 " id="prodTitle">DummyProduct_1</h1>
+                    <div class="campaign__store display--desktop">
+                        Created by
+                        <span class="campaign__store_link "id="createdUser">TagbitUser1</span>
+                    </div>
+                    <a name="campaign_description"></a>
+                    <div class="campaign__description display--desktop ">
+                        <div class="campaign__description_contents truncated prodDesc campaign_description" id="campaign_description">
+                            Tagbit Customized TShirt
+                            <div class="fade-out"></div>
+                            <br> Color : <b>-</b>
+                        </div><!--<a class="show-more">Show More</a>-->
+                    </div>
+                    <!-- <div class="holiday-shipping-wrapper display--desktop">
+                      <div class="holiday-shipping display--desktop" style="display: none;">
+                        <div class="js-holiday-delivery-estimates"></div>
+                      </div>
+                    </div> -->
+                    <div class="campaign__purchase_container">
+                        <div class="product_dropdown__container">
+                            <h2 class="product_dropdown__label">Available Product:</h2>
+                            <div class="js_product_dropdown">
+                                <option class="js-product-option " id="prodTitlesub" selected="selected" data-product-region="IN" value="2">DummyProduct_1</option>
+                                <option class="js-product-option" id="prodPrice" selected="selected" data-product-region="IN" value="2">Rs - 500</option>
+                                @*<% if(alldata.out_of_stock == "1"){ %><option class="js-product-option" style="color:rgb(206, 61, 61)"> *Out of Stock</option><% } %>*@
+                                <div class="js-product-option">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <input name="pincode" id="inputpincode" type="text" class="form-control input-sm" required="true" placeholder="Pincode" style="box-shadow: 1px 0px 10px 1px rgba(0,0,0,.075);">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input type="button" value="Check" id="pinSignupBtn" class="btn pull-left push-bottom createAccountBtn btn-primary2" style="background-color: #505bda; line-height: 1; height: 5%; margin-bottom: 10px;">
+                                        </div>
+                                        <div class="col-md-5">
+                                            <b id="deliveryavailable" style="color:green;display: none;"> Delivery available </b>
+                                            <b id="deliverynotavailable" style="color:red;display: none;"> Delivery not available </b>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="js-product-option sc_style">
+                                    <a href="#0" id="sc_collape">Size chart</a>
+                                    <span id="sizeChart" class="collapse"></span>
+                                </div>
+                                <div class="js-product-option">
+                                    <span style="color:black"><u>Select Size and Quantity Below:</u></span>
+                                    <!--<p>*Choose one size greater than your regular size for a better fit.</p>-->
+                                    <table>
+                                        <tbody>
+                                            <tr><td>S</td><td>M</td><td>L</td><td>XL</td><td>XXL</td></tr>
+                                            <tr>
+                                                <td><input value="0" id="sizes" type="text" data-label="Size" class="settingControl form-control"></td>
+                                                <td><input value="0" id="sizem" type="text" data-label="Size" class="settingControl form-control"></td>
+                                                <td><input value="0" id="sizel" type="text" data-label="Size" class="settingControl form-control"></td>
+                                                <td><input value="0" id="sizexl" type="text" data-label="Size" class="settingControl form-control"></td>
+                                                <td><input value="0" id="sizexxl" type="text" data-label="Size" class="settingControl form-control"></td>
+                                            </tr>
+                                    </table>
+                                    <option class="js-product-option" style="display:none;color: red;" id="errormsg">Product not available</option>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="campaign_page__size_qty_container" style="padding:0px;">
+                        <div class="product_size__container hidden">
+                            <ul class="product_size__list">
+                                <li class="product_size__item product_size__item--hidden"><span class="product_size__size"></span></li>
+                            </ul>
+                        </div>
+                        <br>
+                        <div class="campaign_transaction js-transaction-button" id="addtocart" style="width:100%">
+                            <a class="button--transaction js-add-to-cart campaign_transaction__button campaign_transaction__button--old button--large button"><span class="js-in-stock" style="color:#fff">Add to cart</span></a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+          
+        </section>
+        <section class="site__main">
+            <div class="site__wrapper">
+                <div class="campaign__column--description">
+                    <a name="campaign_description"></a>
+                    <div class="campaign_info__container">
+                        <div class="js-new-info campaign_info__header hidden">
+                            <div class="js-campaign-info-link campaign_info__header_link campaign_info__header_link--selected" data-section="shipping">Delivery details</div>
+                            <div class="js-campaign-info-link campaign_info__header_link" data-section="return">Return Policy</div>
+                            <div class="js-campaign-info-link campaign_info__header_link" data-section="campaign-id">Keywords</div>
+                            <div class="campaign_info__header_link campaign_info__header_link--fill"></div>
+                        </div>
+                        <div class="js-campaign-info-section js-old-content campaign_info__content" data-section="shipping">
+                            <div class="js-old-info campaign_info__header">Delivery details</div>
+                            <div>
+                                <div class="campaign_info__region_dropdown campaign_info__region_dropdown--right">
+                                    <div class="dropdown--popover js-shipping-info-dropdown" data-value="India">
+                                        <div class="dropdown__toggle campaign_info__region_toggle js-region-toggle">India</div>
+                                        <div class="dropdown__menu dropdown__menu--hidden">
+                                            <div class="dropdown__menu_link dropdown__menu_link--nowrap">India</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                All products are printed to order. <br> If you place your order
+                                now, it will ship within 7 days.
+                            </div>
+                            <div>
+                                <div data-product-region="IN">
+                                    Please
+                                    allow additional <span class="js-shipping-time">2 - 5</span> business days for standard shipping.
+                                </div>
+                            </div>
+                            <div>
+                                Expedited or Rush shipping may be available depending upon the
+                                product(s) selected and the destination.
+                            </div>
+
+                            <div class="campaign_info__content__row js-ship-from-regions">
+                                <div class="js-ship-from-region" data-product-region="IN">Products are fulfilled in the INDIA</div>
+                            </div>
+                        </div>
+                        <div class="js-campaign-info-section js-old-content campaign_info__content" data-section="return">
+                            <div class="js-old-info campaign_info__header">Return Policy</div>
+                            <div>
+                                <div class="campaign_info__content campaign_info__content--return_polic">
+                                    If you're not 100% satisfied
+                                    with your physical order, let us know and we'll make it right. <br>Learn more about our return policy
+                                    <a href="https://www.tagbit.co/refundPolicy" target="_blank">here</a>.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="js-campaign-info-section campaign_info__row campaign_info__row--campaign_id" data-section="campaign-id">
+                            <div class="js-old-info campaign_info__header">Keywords</div>
+                            <div>
+                                <div class="campaign_info__content campaign_info__content--id"><%=alldata.keyword%></div>
+                            </div>
+                        </div>
+                        <div class="campaign_info__report_campaign"><a href="https://localhost:3000/policies/report/gpimh">Report this listing</a></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="report__wrapper">
+                <div class="site__wrapper">
+                    <a href="https://www.tagbit.co/contact-us" target="_blank">
+                        <span class="icon-report">
+                            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.0001 9.28564V14.8571" stroke="black" stroke-width="1.85714" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M12.0717 20.4286C12.0717 20.6748 12.1695 20.911 12.3436 21.0852C12.5178 21.2593 12.754 21.3571 13.0002 21.3571C13.2465 21.3571 13.4827 21.2593 13.6568 21.0852C13.831 20.911 13.9288 20.6748 13.9288 20.4286C13.9288 20.1823 13.831 19.9461 13.6568 19.772C13.4827 19.5978 13.2465 19.5 13.0002 19.5C12.754 19.5 12.5178 19.5978 12.3436 19.772C12.1695 19.9461 12.0717 20.1823 12.0717 20.4286Z" stroke="black" stroke-width="1.85714" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M14.6602 1.95568C14.5058 1.64762 14.2688 1.38858 13.9755 1.20756C13.6823 1.02654 13.3445 0.930664 12.9999 0.930664C12.6553 0.930664 12.3176 1.02654 12.0243 1.20756C11.7311 1.38858 11.4941 1.64762 11.3397 1.95568L1.12537 22.3843C0.983921 22.6673 0.917148 22.9818 0.931385 23.298C0.945623 23.6141 1.0404 23.9213 1.20672 24.1905C1.37305 24.4597 1.6054 24.682 1.88173 24.8362C2.15807 24.9903 2.46922 25.0714 2.78566 25.0715H23.2142C23.5307 25.0714 23.8418 24.9903 24.1181 24.8362C24.3945 24.682 24.6268 24.4597 24.7932 24.1905C24.9595 23.9213 25.0543 23.6141 25.0685 23.298C25.0827 22.9818 25.016 22.6673 24.8745 22.3843L14.6602 1.95568Z" stroke="black" stroke-width="1.85714" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </span>
+                        Report this product
+                    </a>
+                </div>
+            </div>
+        </section>
+        <div id="signup-model-pm" class="infoclass" style="display: none;">
+            <div class="signupbox">
+                <span class="closeInfo" id="closepm">&times;</span>
+                <div id="signup">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>Sign up</h3>
+                        </div>
+                    </div>
+                    <form action="#" id="signupForm3" method="post">
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <input id="pageSignUpUsername" name="signup_email" type="text" placeholder="Email" class="form-control input-lg" required="true" email="true" placeholder="E-mail Address" style="box-shadow: 1px 0px 10px 1px rgba(0,0,0,.075);">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <input name="popupSignUpPassword" type="password" placeholder="Password" class="input-lg form-control" required="true" minlength="5" placeholder="Password" style="box-shadow: 1px 0px 10px 1px rgba(0,0,0,.075);">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <input id="pageSignPasswordConfirm" name="popupSignPasswordConfirm" type="password" placeholder="Confirm Password" class="form-control input-lg" required="true" minlength="5" equalTo="[name=popupSignUpPassword]" placeholder="Re-enter Password" style="box-shadow: 1px 0px 10px 1px rgba(0,0,0,.075);">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-2">
+                                <input type="checkbox" name="termandcondiction2" id="termandcondiction2" required="true">
+                            </div>
+                            <div class="col-md-10">
+                                <label class="pod-labels" for="termandcondiction2">
+                                    I have read and agree to the terms and conditions as well as the privacy
+                                    policy, cookie policy and community guidelines
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <input type="button" value="Create Account" id="pageSignupBtn" class="btn pull-right push-bottom createAccountBtn btn-primary2" name="popupCreateAccountBtn" data-loading-text="Loading..."
+                                       style="background-color: #505bda; line-height: 1; height: 5%; margin-bottom: 10px;">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <p class="log-in-info" style="display: inline">Already have an account? <span id="loginpop">Log In</span></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div id="login" style="display: none;">
+
+                    <form action="#" id="signupForm4" method="post">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3>Sign in</h3>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <input id="pageLoginUpUsername" name="signup_email" type="text" placeholder="Email" class="form-control input-lg" required="true" email="true" placeholder="E-mail Address" style="box-shadow: 1px 0px 10px 1px rgba(0,0,0,.075);">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <input id="popupLoginUpPassword" name="popupLoginUpPassword" type="password" placeholder="Password" class="input-lg form-control" required="true" minlength="5" placeholder="Password" style="box-shadow: 1px 0px 10px 1px rgba(0,0,0,.075);">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <input type="button" value="Login" id="pageLoginBtn" class="btn pull-right push-bottom createAccountBtn btn-primary2" name="popupCreateAccountBtn" data-loading-text="Loading..."
+                                       style="background-color: #505bda; line-height: 1; height: 5%; margin-bottom: 10px;">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <p class="log-in-info" style="display: inline">Don't have an account? <span id="signuppop" class="comm-color">Sign Up</span></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+        $(function () {
+
+            document.getElementById('productImg').src = JSON.parse(localStorage.getItem(1))['imageSrc'];
+            $('#prodTitle').text(JSON.parse(localStorage.getItem(1))['title']);
+            $('#prodTitlemob').text(JSON.parse(localStorage.getItem(1))['title']);
+            $('#createdUser').text(JSON.parse(localStorage.getItem(1))['userid']);
+            $('#createdUsermob').text(JSON.parse(localStorage.getItem(1))['userid']);
+            $('#campaign_description').text(JSON.parse(localStorage.getItem(1))['description']);
+            $('#prodTitlesub').text(JSON.parse(localStorage.getItem(1))['title']);
+            $('#prodPrice').text(JSON.parse(localStorage.getItem(1))['price']);
+
+            function getSizeChart(id) {
+                var dataobj = { id: id };
+                var size_chart = '<table><tr><th>Label</th><th>Chest Size</th><th>Body Length</th><th>Shoulder</th></tr>';
+                doPost("/getSizeChart", dataobj, function (b) {
+                    if (b.status == 200) {
+                        size_chart += '<tr><td>S</td><td>' + parseInt(b.sizechart[0]["s"]) * 2 + '</td><td>' + parseInt(b.sizechart[1]["s"]) * 1 + '</td><td>' + parseInt(b.sizechart[2]["s"]) * 1 + '</td></tr>';
+                        size_chart += '<tr><td>M</td><td>' + parseInt(b.sizechart[0]["m"]) * 2 + '</td><td>' + parseInt(b.sizechart[1]["m"]) * 1 + '</td><td>' + parseInt(b.sizechart[2]["m"]) * 1 + '</td></tr>';
+                        size_chart += '<tr><td>L</td><td>' + parseInt(b.sizechart[0]["l"]) * 2 + '</td><td>' + parseInt(b.sizechart[1]["l"]) * 1 + '</td><td>' + parseInt(b.sizechart[2]["l"]) * 1 + '</td></tr>';
+                        size_chart += '<tr><td>XL</td><td>' + parseInt(b.sizechart[0]["xl"]) * 2 + '</td><td>' + parseInt(b.sizechart[1]["xl"]) * 1 + '</td><td>' + parseInt(b.sizechart[2]["xl"]) * 1 + '</td></tr>';
+                        size_chart += '<tr><td>XXL</td><td>' + parseInt(b.sizechart[0]["xxl"]) * 2 + '</td><td>' + parseInt(b.sizechart[1]["xxl"]) * 1 + '</td><td>' + parseInt(b.sizechart[2]["xxl"]) * 1 + '</td></tr>';
+
+                        size_chart += '</table>';
+
+                        $("#sizeChart").append(size_chart);
+                    }
+                }, function (a) {
+                    bootbox.alert("Success: Account added successfully")
+                    removeWaitingOverlay()
+                })
+            }
+            $("#sc_collape").click(function () {
+                $("#sizeChart").toggleClass("in");
+            });
+          //  $("#signupForm3").validate();
+            $("#pageSignupBtn").click(function (e) {
+                removeWaitingOverlay();
+                e.preventDefault();
+                if ($('#signupForm3').valid()) {
+                    signup({ usertype: 'CUSTOMER', email: $("#pageSignUpUsername").val(), password: $("#pageSignPasswordConfirm").val() });
+                } else {
+                    // bootbox.alert("Please enter the valid values");
+                }
+            });
+
+            $("#pageLoginBtn").click(function (e) {
+                //  e.preventDefault();
+                // addWaitingOverlay();
+                signin($("#pageLoginUpUsername").val(), $("#popupLoginUpPassword").val(), function (resp) {
+                    console.log("resp", resp)
+                    location.reload();
+                }, function (err) {
+                    removeWaitingOverlay();
+                    console.log(err);
+                    bootbox.alert(typeof err == "string" ? err : "Server Error: " + err.error);
+                });
+            });
+
+            $("#pinSignupBtn").click(function (e) {
+                var pincode = $("#inputpincode").val();
+                if (pincode.trim() != "") {
+                    $("#deliveryavailable").hide();
+                    $("#deliverynotavailable").hide();
+                    var dataobj = { "pincode": pincode }
+                    $("#inputpincode").val("");
+                    doPost("/checkPinCode", dataobj, function (b) {
+                        if (b.status == 200) {
+                            if (b.valid == 1) {
+                                $("#deliverynotavailable").hide();
+                                $("#deliveryavailable").show();
+                            } else {
+                                $("#deliverynotavailable").show();
+                                $("#deliveryavailable").hide();
+                            }
+                        } else {
+                            bootbox.alert("Something went wrong")
+                        }
+                    })
+                } else {
+
+                }
+
+            })
+         //   getSizeChart(<%=alldata.id %>);
+
+        });
+        var loginpopbtn = document.getElementById("loginpop");
+        var signuppopbtn = document.getElementById("signuppop");
+        var addtocart = document.getElementById("addtocart");
+        var modallogin = document.getElementById("login");
+        var modalsignup = document.getElementById("signup");
+        var modalpm = document.getElementById("signup-model-pm");
+        var spanpm = document.getElementById("closepm");
+
+        addtocart.onclick = function () {
+            $("#errormsg").hide();
+            var isloggedin = "<%=user%>";
+            var out_of_stock = 1;
+            if (out_of_stock != "1") {
+                var sm = $("#sizes").val();
+                var m = $("#sizem").val();
+                var l = $("#sizel").val();
+                var xl = $("#sizexl").val();
+                var xxl = $("#sizexxl").val();
+                var total = (parseInt(sm) + parseInt(m) + parseInt(l) + parseInt(xl) + parseInt(xxl));
+                var price = parseInt(500);
+                var product_id =1;
+                var totalprice = (total * price);
+                var product_name = "DummyProduct_1";
+                var img = "<%=alldata.front_image%>";
+                var body = {
+                    title: product_name,
+                    product_id: product_id,
+                    price: totalprice,
+                    small: sm,
+                    medium: m,
+                    large: l,
+                    xl: xl,
+                    doublexl: xxl,
+                    front_image: img
+                }
+                if (isloggedin != 'undefined') {
+                    if (totalprice > 0) {
+                        var url = "/addUserOtherProductCustom";
+                        doPost(url, body, function (resp) {
+                            if (resp.status == 200) {
+                                var _finishSaveAction = function () {
+                                    // if (savedTo != "purchase") {
+                                    window.location = "/checkout"
+                                    //} else {
+                                    //   showToast("Modifications to the purchased item is finished.", "success");
+                                    // }
+                                };
+                                addOtherCustomProductToShoppingCart(resp.insertId, function () {
+                                    _finishSaveAction();
+                                });
+                            } else {
+                                console.log(resp);
+                                alert('Error: ' + resp.msg);
+                            }
+                        }, function (err) {
+                            console.log(err);
+                            showToast("Communication failure!!");
+                        });
+                    } else {
+                        alert("Please select size");
+                    }
+                } else {
+                    if (totalprice > 0) {
+                        var temp_data;
+                        var data;
+                        if (localStorage.getItem('cartDetails') != undefined) {
+                            temp_data = JSON.parse(localStorage.getItem('cartDetails'));
+                            var maxid = 0;
+                            temp_data.map(function (obj) {
+                                if (obj.product.id > maxid) maxid = obj.product.id;
+                            });
+                            body.id = parseInt(maxid) + 1;
+                            data = {};
+                            data["product"] = body;
+                            temp_data.push(data);
+                        } else {
+                            body.id = 1;
+                            temp_data = [];
+                            data = {};
+                            data["product"] = body;
+                            temp_data.push(data);
+                        }
+                        localStorage.setItem('cartDetails', JSON.stringify(temp_data));
+                        window.location = "/checkout";
+                    } else {
+                        alert("Please select size");
+                    }
+
+                }
+            } else {
+                //alert("Either Product not available or Pincode is not deliverable");
+                $("#errormsg").show();
+            }
+        }
+
+        signuppopbtn.onclick = function () {
+            modallogin.style.display = "none";
+            modalsignup.style.display = "block"
+        }
+
+        loginpopbtn.onclick = function () {
+            modallogin.style.display = "block";
+            modalsignup.style.display = "none"
+        }
+
+
+        // When the user clicks on <span> (x), close the modal
+        spanpm.onclick = function () {
+            modalpm.style.display = "none";
+        }
+
+    </script>
+
+    <!-- privacy-section end -->

@@ -1,0 +1,129 @@
+.page_top{background-color: #505BDA;margin-bottom: 35px;}
+.page_top h1{color: #FFF;display: inline-block;font-size: 25px;margin-bottom: 15px;line-height: .8em;}
+
+.addLogoBtn,.addCategoryBtn,.addCardBtn{float: right;background-image: linear-gradient(to bottom, #505BDA, #00a5a4) !important;border-color:#505BDA !important }
+.admin_container .form-group label{font-size: 14px;font-weight: normal;}
+.admin_container .form-group .input-lg{font-size:14px;}
+
+.tableRow{border: solid 0px #505BDA;/*border-color:#505BDA;*/}
+/*.table_category .row,.table_logo .row,.table_card .row{border-radius:4px;border: solid 1px #505BDA;}*/
+.tableRow th{text-align: center;background-color: #505BDA;color:#fff;padding:5px;}
+.tableRow tr td{border-color:#ccc;padding:3px;text-align: center}
+.deleteCategory,.deleteCard,.deleteLogo{padding:1px 7px 1px 7px;margin-bottom:3px;border-radius: 0;}
+
+.bootstrap-filestyle .btn-primary{background-color: #505BDA !important;border-color:#00a5a4 !important;background-image:none !important;}
+.bootstrap-filestyle .btn-primary:hover{background-color:#00a5a4 !important;}
+
+#tblCards tr td img,#tblLogos tr td img{width:130px !important;}
+
+#addLogoModal form,#addCardModal form,#addCategoryModal form{width:90%;margin:0 auto;}
+#addLogoModal .modal-body,#addCardModal .modal-body,#addCategoryModal .modal-body{max-height: 500px;margin-bottom:0px;}
+
+/*Home page*/
+.navbar-default {
+
+background-color: #f8f8f8 !important;
+border-color: #e7e7e7 !important;
+}
+.navbar-fixed-top {
+top: 0 !important;
+border-width: 0 0 1px !important;
+}
+.navbar-fixed-top, .navbar-fixed-bottom {
+position: fixed !important;
+right: 0 !important;
+left: 0 !important;
+z-index: 1030 !important;
+}
+.navbar .container, .subnavbar .container{padding-right: 15px !important;padding-left:15px !important;}
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus{cursor:pointer;background-color: #f5f5f5 !important;color:#262626 !important;text-shadow:none !important;}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus{color: #555 !important;background-color: #e7e7e7 !important;}
+.navbar {
+background-image:none !important;
+box-shadow:none !important;
+min-height: 50px !important;
+margin-bottom: 20px !important;
+/*border: 1px solid transparent !important;*/
+}
+.navbar .navbar-header .navbar-brand{font-weight: normal !important;color: #777 !important;}
+#navbar li a{font-size:14px !important;}
+body {
+font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+font-size: 14px !important;
+line-height: 1.42857143 !important;
+color: #333 !important;
+background:none !important;
+background-color: #fff !important;
+}
+.navbar .navbar-nav > li > .dropdown-menu:before, .navbar .navbar-nav > li > .dropdown-menu:after{display:none !important;}
+
+/*dashboard page*/
+.dashboard_widgets{margin-top:30px;}
+.dashboard_addLogo,.dashboard_addCard,.dashboard_addCategory{float:right;margin-right:10px;cursor:pointer;margin-top: -2px;}
+.widget-header .btn{line-height: 15px;background-image: linear-gradient(to bottom, #fff, #ECECEC) !important;background: #fff;color:#505BDA;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;}
+.dashboard_widgets .widget-header{background: #505BDA !important;color:#fff !important;border-color: #505BDA !important;}
+.dashboard_widgets .widget-header h3 a{text-decoration: none;color:#fff !important;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;}
+.dashboard_widgets .tableRow td img{width:20px;height:20px;}
+.dashboard_widgets .tableRow td a{cursor: pointer;}
+.modal-header{background-image:none !important;border:none !important;border-bottom: 1px solid #e5e5e5 !important;}
+.modal-header h4{font-size: 18px !important;color:#000 !important;text-shadow: none !important;}
+/*.modal-header .close{
+float: right !important;
+font-size: 21px !important;
+font-weight: bold !important;
+line-height: 1 !important;
+color: #000 !important;
+text-shadow: 0 1px 0 #fff !important;
+filter: alpha(opacity=20) !important;
+opacity: .2 !important;
+}*/
+.close{font-weight: bold !important;}
+.modal-header .close{font-size: 21px !important;text-shadow: 0 1px 0 #fff !important;font-weight: bold !important;opacity: .2 !important;color: #ccc !important;}
+.modal-header .close:hover{
+color: #000 !important;
+cursor: pointer !important;
+}
+
+.modal-body .form-control,.modal-content h4,.modal-content .btn{font-family:"Helvetica Neue", Helvetica, Arial, sans-serif !important;}
+.modal-footer .btn-default{float: left;}
+/*.modal-footer .btn-primary:hover{background-color: #3071a9 !important;border-color:#285e8e !important;}*/
+.table_card .searchItem{margin-bottom: 20px;}
+.table_card .searchItem i{color:#505BDA;}
+.dashboard_widgets .widget .widget-content{padding:0 !important;}
+/*.table_card .input-search .form-control{border-radius: 500px;}*/
+
+/*List of Cards*/
+.business_cards li{list-style-type: none;position: relative;}
+.card_details{z-index: 100;margin-left: -4px;clear:both;padding:4px;display: block;background-color: #fff;position: absolute;top:240px;height:100%;border-radius: 4px;}
+.cardItems .card_category,.cardItems card_title,.card_details .card_category,.card_details .card_title{display: block;}
+.cardItems{border: 1px solid #ddd;border-radius: 4px;padding:4px;overflow:hidden;margin-bottom: 0;position:relative;width: 95%;height:200px;background-color: #fff;}
+.cardItems a{display: block;}
+.card_swap{text-align: center !important;padding-bottom: 30px;}
+.card_swap span a{cursor:pointer;color:#ccc;}
+.card_swap span a.active{color:#505BDA;}
+/*.card_swap .back_card a{color:#ccc;}*/
+.card_swap .slash{padding:3px;}
+.business_cardsSection{position: relative;}
+.cardItems .items_img img{width: 70%;height: 70%;}
+
+.action-icons{position: relative;}
+.action-icons a{cursor:pointer;}
+.action-icons span{width:20%;margin:10px;position: absolute;}
+.action-icons .view_icon{left:0;}
+.action-icons .edit_icon{left:30px;}
+.action-icons .delete_icon{left:60px;}
+
+#serialNum{
+    width: 100px
+}
+#logo_status_div{
+	padding-bottom:15px;
+}
+#purchased_status_div{
+	color:white;
+	background-color:#169316;
+	text-align:center;
+	width:81px;
+    position: absolute;
+    z-index: 99;
+}

@@ -1,0 +1,739 @@
+﻿
+<link rel="stylesheet" href="~/css/mymerch.css" media="screen">
+<script src="~/js/helpers/mymerch.js"></script>
+<style>
+    .col3custom {
+        flex: 20%;
+        padding: 20px;
+    }
+
+    .product-single .details {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        -webkit-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+
+    .my-logos-list {
+        display: inline-block;
+        border: 1px solid #eaeaea;
+        margin-right: 20px;
+        padding: 15px;
+        cursor: pointer;
+        min-width: 250px;
+        position: relative;
+        margin-bottom: 5px;
+        margin-top: 15px;
+    }
+
+        .my-logos-list span.my-logo-company {
+            display: block;
+            text-align: center;
+            padding-top: 15px;
+            padding-bottom: 10px;
+        }
+
+        .my-logos-list object,
+        .my-logos-list .hasSVG {
+            height: 111px;
+            width: 220px;
+            margin: 0 auto;
+            display: block;
+        }
+</style>
+
+<section class="page-top page-top-logo">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" style="margin-top:100px;">
+                <span class="page-common-header"><b>My Merchandise</b></span>
+                <h4 style="padding-left:15px;">Dashboard</h4>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container">
+    <div class="col-md-8">
+        <div class="col-md-12 edit-profile-header" style="margin-bottom: 20px;">
+            <h4 id='name'></h4>
+            <p>Here is how you are doing</p>
+        </div>
+    </div>
+
+    <div class="col-md-8" style="padding-left:30px; margin-bottom: 20px;">
+        <!-- Tab links -->
+        <div class="merch-tab">
+            <button class="tablinks active" onclick="switchTab(event, 'myListings')">My Listings</button>
+            <button class="tablinks" onclick="switchTab(event, 'MyOrders')">My Orders</button>
+            <button class="tablinks" onclick="switchTab(event, 'payment_methods')">Payment methods</button>
+            <button class="tablinks" onclick="switchTab(event, 'myCoupan')">Coupons</button>
+        </div>
+
+        <!-- Tab content -->
+        <div id="myListings" class="tabcontent" style="display:block">
+            @*<div>
+                <table class="table">
+                    <tr><th scope="col">#</th><th scope="col">Image</th><th scope="col">Title</th><th scope="col">Price</th><th scope="col">Action</th><th>Product Link</th></tr>
+                </table>
+            </div>*@
+        </div>
+
+            <div id="MyOrders" class="tabcontent">
+
+            </div>
+
+            <div id="payment_methods" class="tabcontent">
+                <h5>Payment Methods</h5>
+                <button class="btn btn-primary" id="paymBtn"
+                        style="float:right;font-size:14px !important;line-height: 2.0;">
+                    Add a new payment method
+                </button>
+                <p>Existing payment methods</p>
+                <div id="pay_panel">
+                </div>
+            </div>
+            <div id="myCoupan" class="tabcontent">
+
+            </div>
+            <br>
+            <h4>New Design</h4>
+            <p>Choose your product</p>
+            <div class="row" id="tagbit-products">
+                <div class="col3custom">
+                    <div class="product-single text-center">
+                        <a href="/Home/Design?prod=RBlueRNTshirt" class="item-link"></a>
+                        <div class="thumb"><img src="~/img/product/RBlueRNTshirt.jpg" alt="image"></div>
+                        <div class="details">
+                            <h6 class="product-name">Crew Neck Tshirt</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col3custom">
+                    <div class="product-single text-center">
+                        <a href="/Home/Design?prod=GreyTTopFront" class="item-link"></a>
+                        <div class="thumb"><img src="~/img/product/GreyTTopFront.jpg" alt="image"></div>
+                        <div class="details">
+                            <h6 class="product-name">Men's Tank Top</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col3custom">
+                    <div class="product-single text-center">
+                        <a href="/Home/Design?prod=NBluePTshirtFront" class="item-link"></a>
+                        <div class="thumb"><img src="~/img/product/NBluePTshirtFront.jpg" alt="image"></div>
+                        <div class="details">
+                            <h6 class="product-name">Men's Polo Tshirt</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="tagbit-products-2">
+                <div class="col3custom">
+                    <div class="product-single text-center">
+                        <a href="/Home/Design?prod=BlackSSFront" class="item-link"></a>
+                        <div class="thumb"><img src="~/img/product/BlackSSFront.jpg" alt="image"></div>
+                        <div class="details">
+                            <h6 class="product-name">Sweatshirts</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col3custom">
+                    <div class="product-single text-center">
+                        <a href="/Home/Design?prod=GreyHoodieFront" class="item-link"></a>
+                        <div class="thumb"><img src="~/img/product/GreyHoodieFront.jpg" alt="image"></div>
+                        <div class="details">
+                            <h6 class="product-name">Hoodies</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col3custom">
+                    <div class="product-single text-center">
+                        <a href="/Home/Design?prod=BlackWTshirtFront" class="item-link"></a>
+                        <div class="thumb"><img src="~/img/product/BlackWTshirtFront.jpg" alt="image"></div>
+                        <div class="details">
+                            <h6 class="product-name">Women's Round Tshirt</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <h4>Other Products and Promotionals</h4><br>
+            <div class="row" id="tagbit-products-2">
+                <a href="http://blog.tagbit.co/2021/03/05/how-to-sell-t-shirt-using-tagbit/">
+                    <div class="col3custom"
+                         style="font-family: 'Quicksand';margin: 10px;background-color: #F5F5F5;border-radius: 4px;padding: 10px;font-size: 20px;color:#777777;display:flex;">
+                        <i class="fa fa-plus-circle"></i>
+                        <div style="margin-left: 5px;">
+                            <b>
+                                4 Tips to <br> Start Selling <br> Tshirt Online with<br>
+                                Tagbit
+                            </b>
+                        </div>
+                    </div>
+                </a>
+                <div class="col3custom" style="padding:10px;">
+                    <div class="thumb"><img src="~/img/product/promotional2.jpg" alt="image"></div>
+                </div>
+                <div class="col3custom" style="padding:10px;">
+                    <div class="thumb"><img src="~/img/product/promotional1.jpg" alt="image"></div>
+                </div>
+            </div>
+
+            <div style="display: none;">
+                <input type="hidden" id="cashoutpending">
+                <input type="hidden" id="paidtodate">
+                <input type="hidden" id="totalprofit">
+            </div>
+
+        </div>
+
+    <div class="col-md-4" style="margin-bottom: 20px;">
+        <div class="merch_side" style="float: left; width: 100%">
+            <h5>Earnings Summary</h5>
+            <hr style="margin: 10px 0 10px 0;">
+            <p>
+                Balance: <b><span id="net_balance"></span></b><button class="btn btn-primary" id="cashoutBtn"
+                                                                      style="float:right;font-size:14px !important;line-height: 2.0;">
+                    cashout
+                </button>
+            </p>
+
+            <hr style="margin: 10px 0 10px 0;">
+            <h6>Your Stats:</h6>
+            <ul>
+                <li>Net Profit: <span id="net_profit"></span></li>
+                <li>Paid to date: <span id="paid_to_date"></span></li>
+            </ul>
+            <p>Pending Cashout: <span id="pending_cashout"></span></p>
+        </div>
+        <div id="content">
+            <div class="demo">
+                <h3 class="expand" style="padding-bottom:20px;">
+                    <i class="fa fa-plus-circle"></i><i class="fa fa-minus-circle"></i>My Purchased History<span class="hist-count"></span>
+                </h3>
+                <div class="collapse" style="height:495px;overflow-y:scroll">
+                    <ul class="my-purchases-ul col-md-12 custom26">
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Trigger info -->
+    <div id="info-model-pm" class="infoclass">
+        <div class="info-content" style="display:flex">
+            <span class="closeInfo" id="closepm" style="margin-top: -30px;margin-left: -16px;">&times;</span>
+            <div id="signup">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Payment Method</h3><br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <button class="btn btn-primary btn-sm" style="margin-bottom: 10px;"
+                                id="ba_add" onclick="addBankAccount()">
+                            +Bank Account
+                        </button>
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-primary btn-sm" style="margin-bottom: 10px;"
+                                id="upi_add" onclick="addUpiId()">
+                            +UPIID
+                        </button>
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-primary btn-sm" style="margin-bottom: 10px;"
+                                id="pp_add" onclick="addPaypal()">
+                            +Paypal
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="paymentforms">
+        <!-- pay panels -->
+        <div id="paybank" style="display: none;" class="infoclass">
+
+            <div class="signupbox">
+                <span class="closeInfo" id="closepmb">&times;</span>
+                <div id="signup">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>Add Bank Account</h3>
+                        </div>
+                    </div>
+                </div>
+                <form id="payment-info-ba">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="b_name">Name of Bank Account <em>*</em></label>
+                            <input type="text" id="b_name" name="b_name" placeholder="Enter Bank Name"
+                                   required="true">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="ifsc">IFSC Code<em>*</em></label>
+                            <input type="text" id="ifsc" name="ifsc" placeholder="IFSC Code" required="true">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="acc_num">Account Number <em>*</em></label>
+                            <input type="text" id="acc_num" name="acc_num" placeholder="Enter Account Number"
+                                   required="true" minlength="8">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="confirm_acc_num">Confirm Account Number <em>*</em></label>
+                            <input type="text" id="confirm_acc_num" name="confirm_acc_num"
+                                   placeholder="Confirm Account Number" required="true" minlength="8"
+                                   equalTo="[name=acc_num]"
+                                   data-msg-equalTo="Account Number and Confirm Account Number do not match.">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <button type="submit" id="addBA" class="btn btn-primary btn-sm pull-right"
+                                    style="margin-bottom: 10px;">
+                                Add Bank
+                                Account
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="paypp" style="display: none;" class="infoclass">
+            <div class="signupbox">
+                <span class="closeInfo" id="closepmp">&times;</span>
+                <div id="signup">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>Add Paypal Id</h3>
+                        </div>
+                    </div>
+                </div>
+                <form id="payment-info-pp">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="pp_id">Paypal Email ID <em>*</em></label>
+                            <input type="text" id="pp_id" name="pp_id" placeholder="Enter your Paypal Email ID"
+                                   required="true">
+                        </div>
+                    </div>
+                    <div class="form-group">
+
+                        <label for="confirm_pp_id">Confirm Paypal Email ID <em>*</em></label>
+                        <input type="text" id="confirm_pp_id" name="confirm_pp_id"
+                               placeholder="Confirm your Paypal ID" required="true" equalTo="[name=pp_id]"
+                               data-msg-equalTo="Paypal ID and Confirmation ID do not match.">
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <button id="addPP" class="btn btn-primary btn-sm pull-right"
+                                    style="margin-bottom: 10px;">
+                                Add Paypal
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="payupi" style="display: none;" class="infoclass">
+
+            <div class="signupbox">
+                <span class="closeInfo" id="closepmu">&times;</span>
+                <div id="signup">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>Add UPI Id</h3>
+                        </div>
+                    </div>
+                </div>
+                <form id="payment-info-up">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="upi_id">UPI ID <em>*</em></label>
+                            <input type="text" id="upi_id" name="upi_id" placeholder="Enter your UPI ID"
+                                   required="true">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="confirm_upi_id">Confirm UPI ID <em>*</em></label>
+                            <input type="text" id="confirm_upi_id" name="confirm_upi_id"
+                                   placeholder="Confirm your ID" required="true" equalTo="[name=upi_id]"
+                                   data-msg-equalTo="UPI ID and Confirmation ID do not match.">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <button id="addUPI" class="btn btn-primary btn-sm pull-right"
+                                    style="margin-bottom: 10px;">
+                                Add UPI ID
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="cashoutbox" style="display: none;" class="infoclass">
+            <div class="signupbox">
+                <span class="closeInfo" id="closepmc">&times;</span>
+                <div id="signup">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>Request Cash</h3>
+                        </div>
+                    </div>
+                </div>
+                <form id="payment-info-up">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="cashout_select_panel">Payment Method <em>*</em></label>
+                            <span id="cashout_select_panel"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="amount">Amount<em>*</em></label>
+                            <input type="text" id="amount" name="confirm_upi_id" placeholder="Enter Amount">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+
+                            <button id="reqMoney" class="btn btn-primary btn-sm pull-right"
+                                    style="margin-bottom: 10px;">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="profiledata" style="display: none;" class="infoclass">
+            <div class="signupbox">
+                <span class="closeInfo" id="closepmp">&times;</span>
+                <div id="signup">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>Add Details</h3>
+                        </div>
+                    </div>
+                </div>
+                <form id="payment-info-pp">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="pp_id">Paypal Email ID <em>*</em></label>
+                            <input type="text" id="pp_id" name="pp_id" placeholder="Enter your Paypal Email ID"
+                                   required="true">
+                        </div>
+                    </div>
+                    <div class="form-group">
+
+                        <label for="confirm_pp_id">Confirm Paypal Email ID <em>*</em></label>
+                        <input type="text" id="confirm_pp_id" name="confirm_pp_id"
+                               placeholder="Confirm your Paypal ID" required="true" equalTo="[name=pp_id]"
+                               data-msg-equalTo="Paypal ID and Confirmation ID do not match.">
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <button id="addPP" class="btn btn-primary btn-sm pull-right"
+                                    style="margin-bottom: 10px;">
+                                Add Paypal
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="returnprocess" style="display: none;" class="infoclass">
+            <div class="signupbox">
+                <span class="closeInfo" id="closereturnpmp">&times;</span>
+                <div id="signup">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>Return Request</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+
+                    <label for="confirm_pp_id">Reason <em>*</em></label>
+                    <textarea id="returnreason"></textarea>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <button id="addReturnRequest" class="btn btn-primary btn-sm pull-right"
+                                style="margin-bottom: 10px;">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="cancelprocess" style="display: none;" class="infoclass">
+            <div class="signupbox">
+                <span class="closeInfo" id="closecancelpmp">&times;</span>
+                <div id="signup">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>Cancel Request</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+
+                    <label for="confirm_pp_id">Reason <em>*</em></label>
+                    <textarea id="cancelreason"></textarea>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <button id="addCancelRequest" class="btn btn-primary btn-sm pull-right"
+                                style="margin-bottom: 10px;">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var closereturnpmp = document.getElementById("closereturnpmp");
+    var closecancelpmp = document.getElementById("closecancelpmp");
+    var addReturnRequest = document.getElementById("addReturnRequest");
+    var paybank = document.getElementById("paybank");
+    var paypp = document.getElementById("paypp");
+    var payupi = document.getElementById("payupi");
+    var modalpm = document.getElementById("info-model-pm");
+
+    var returncancelid;
+    addReturnRequest.onclick = function (e) {
+        var reason = $("#returnreason").val();
+        if (reason.trim() == "" || reason.trim().length < 21) {
+            bootbox.alert("Reason should not be less then 20 characters")
+        } else {
+            var obj = { id: returncancelid, reason: reason };
+            postReturnRequest(obj);
+        }
+    }
+    var addCancelRequest = document.getElementById("addCancelRequest");
+    var cancelid;
+    addCancelRequest.onclick = function (e) {
+        var reason = $("#cancelreason").val();
+        if (reason.trim() == "" || reason.trim().length < 21) {
+            bootbox.alert("Reason should not be less then 20 characters")
+        } else {
+            var obj = { id: cancelid, reason: reason };
+            postCancelRequest(obj);
+        }
+    }
+    closereturnpmp.onclick = function () {
+        returnprocess.style.display = "none";
+    }
+    closecancelpmp.onclick = function () {
+        cancelprocess.style.display = "none";
+    }
+
+    getMerchData();
+
+    function deletePayment(type, id) {
+        bootbox.confirm("Are you sure to delete this item?", function (result) {
+            if (result == true) {
+                var payment_type = (type == 1) ? 'short_payment' : 'long_payment';
+                var params = {
+                    payment_type: payment_type,
+                    id: id
+                }
+                doPost("/removePaymentMethod", params, function (b) {
+                    if (b.status == 200) {
+                        location.reload()
+                    }
+                })
+            }
+
+        })
+    }
+
+    function deleteProduct(id) {
+        bootbox.confirm("Are you sure to delete this item?", function (result) {
+            if (result == true) {
+                var params = {
+                    id: id
+                }
+                doPost("/deleteOtherProductDetails", params, function (b) {
+                    if (b.status == 200) {
+                        location.reload()
+                    }
+                })
+            }
+
+        })
+    }
+
+    function deleteCoupan(id) {
+        bootbox.confirm("Are you sure to delete this coupan?", function (result) {
+            if (result == true) {
+                var params = {
+                    id: id
+                }
+                doPost("/deleteCoupan", params, function (b) {
+                    if (b.status == 200) {
+                        location.reload()
+                    }
+                })
+            }
+
+        })
+    }
+
+    function requestreturn(id) {
+        returncancelid = id
+        returnprocess.style.display = "block";
+    }
+
+    function addBankAccount() {
+        paybank.style.display = "block";
+        modalpm.style.display = "none";
+        paypp.style.display = "none";
+        payupi.style.display = "none";
+    }
+    function addUpiId() {
+        paybank.style.display = "none";
+        modalpm.style.display = "none";
+        paypp.style.display = "none";
+        payupi.style.display = "block";
+    }
+    function addPaypal() {
+        paybank.style.display = "none";
+        modalpm.style.display = "none";
+        paypp.style.display = "block";
+        payupi.style.display = "none";
+    }
+    function requestcancel(id) {
+        cancelid = id
+        cancelprocess.style.display = "block";
+    }
+
+    function postReturnRequest(obj) {
+        doPost("/requestReturn", obj, function (b) {
+            $("#returnreason").val("");
+            if (b.status == 200) {
+                if (b.already == 1) {
+                    returnprocess.style.display = "none";
+                    bootbox.alert("Your already raised a return request.")
+                } else {
+                    returnprocess.style.display = "none";
+                    bootbox.alert("Your return request has been raised successfully.")
+                }
+            } else {
+                returnprocess.style.display = "none";
+                bootbox.alert("Something went wrong.Please try again latter")
+            }
+        })
+
+    }
+    function postCancelRequest(obj) {
+        doPost("/requestCancel", obj, function (b) {
+            $("#cancelreason").val("");
+            if (b.status == 200) {
+                if (b.already == 1) {
+                    cancelprocess.style.display = "none";
+                    bootbox.alert("Your already raised a cancellation request.")
+                } else {
+                    cancelprocess.style.display = "none";
+                    bootbox.alert("Your cancel request has been raised successfully.")
+                }
+            } else {
+                cancelprocess.style.display = "none";
+                bootbox.alert("Something went wrong.Please try again latter")
+            }
+        })
+    }
+
+    function getMerchData() {
+        //   doGet("/getMerchData", function (data) {
+      
+        var data = {};
+        data.orderlist = {};
+        data.productlist = {};
+        data.paymethod = {};
+        data.coupanlist = {};
+        //},
+        console.log(data)
+        var orderlist = data.orderlist;
+        var productlist = data.productlist;
+        var paymethod = data.paymethod;
+        var coupanlist = data.coupanlist;
+        var paymenthtml = '<div><table class="table"><tr><th scope="col">Payment Method</th><th scope="col">Payment Details</th><th scope="col">Action</th></tr>';
+        var producthtml = '<div><table class="table"><tr><th scope="col">#</th><th scope="col">Image</th><th scope="col">Title</th><th scope="col">Price</th><th scope="col">Action</th><th>Product Link</th></tr>';
+        var orderhtml = '<div><table class="table"><tr><th scope="col">#</th><th scope="col">Image</th><th scope="col">Base Price</th><th scope="col">Total Base Price</th><th scope="col">Sold Price</th><th scope="col">Total Sold Price</th><th scope="col">Quantity</th><th scope="col">Date Purchased</th><th scope="col">Profit</th><th scope="col">Status</th></tr>';
+        var paymentselectbox = '<select class="form-select" id="paymentselect">';
+        var coupanhtml = '<div><table class="table"><tr><th scope="col">Product Name</th><th scope="col">Coupon Code</th><th scope="col">Coupon Percent</th><th scope="col">Action</th></tr>';
+
+        //var totalprofit = 0
+        //for (var i = 0; i < orderlist.length; i++) {
+        //    var qty = orderlist[i]['small'] + orderlist[i]['large'] + orderlist[i]['medium'] + orderlist[i]['xl'] + orderlist[i]['doublexl'];
+        //    var profit = (orderlist[i]['total_price'] - (orderlist[i]['base_price'] * qty));
+        //    if (orderlist[i]["shipment_status"] == "delivered_freeze") {
+        //        totalprofit += profit;
+        //    }
+        //    var status = (orderlist[i]['shipment_status'] == 'delivered_freeze') ? 'Completed' : orderlist[i]['shipment_status'] == 'delivered' ? 'PROCESSED' : orderlist[i]['shipment_status'] == null ? "PROCESSING" : orderlist[i]['shipment_status'];
+        //    orderhtml += '<tr><th scope="col">' + (i + 1) + '</th><td><a href="/shop/product-details?id=' + orderlist[i]['id'] + '" target="_blank"><img src="/getMyOtherProductImage?id=' + orderlist[i]['image'] + '"></a></td><td>' + orderlist[i]['base_price'] + '</td><td>' + (orderlist[i]['base_price'] * qty) + '</td><td>' + orderlist[i]['single_price'] + '</td><td>' + orderlist[i]['total_price'] + '</td><td>' + qty + '</td><td>' + orderlist[i]['date_purchased'] + '</td><td>' + profit + '</td><td>' + status.toUpperCase() + '</td></tr>';
+        //}
+
+       // for (var i = 0; i < productlist.length; i++) {
+        var id = 1;//productlist[i]['id'];
+        producthtml += '<tr><th scope="col">' + 1 + '</th><td><img src=' + JSON.parse(localStorage.getItem(1))['imageSrc'] + ' style="width:50px"></td><td>' + JSON.parse(localStorage.getItem(1))['title'] + '</td><td>' + JSON.parse(localStorage.getItem(1))['title'] + '</td><td onclick="deleteProduct(' + id + ')" style="cursor:pointer">Delete</td><td><a href="/shop/product-details?id=' + id + '" target="_blank">Link</a></td></tr>';
+       // }
+
+        //for (var i = 0; i < coupanlist.length; i++) {
+        //    var id = coupanlist[i]['coupan_id'];
+        //    coupanhtml += '<tr><th scope="col">' + coupanlist[i]['title'] + '</th><td>' + coupanlist[i]['code'] + '</td><td>' + coupanlist[i]['percent'] + '</td><td onclick="deleteCoupan(' + id + ')" style="cursor:pointer">Delete</td></tr>';
+        //}
+        //if (paymethod && paymethod["long_payment"] != null) {
+        //    for (var i = 0; i < paymethod["long_payment"].length; i++) {
+        //        paymentselectbox += '<option value="' + paymethod["long_payment"][i]["pay_method"] + '-' + paymethod["long_payment"][i]["ID"] + '">' + paymethod["long_payment"][i]['bname'] + '-' + paymethod["long_payment"][i]['ac_num'] + '</option>';
+        //        paymenthtml += '<tr><td>' + paymethod["long_payment"][i]["pay_method"] + '</td><td>';
+        //        paymenthtml += '<div> Bank Name :' + paymethod["long_payment"][i]["bname"] + '<br>';
+        //        paymenthtml += ' Account No :' + paymethod["long_payment"][i]["ac_num"] + '<br>';
+        //        var long_payment = "long_payment";
+        //        paymenthtml += ' IFSC Code :' + paymethod["long_payment"][i]["ifsc"] + '</div></td><td onclick="deletePayment(1,' + paymethod["long_payment"][i]["ID"] + ')" style="cursor:pointer">Delete</td></tr>';
+        //    }
+        //}
+        //if (paymethod && paymethod["short_payment"] != null) {
+        //    for (var i = 0; i < paymethod["short_payment"].length; i++) {
+        //        var short_payment = "short_payment";
+        //        paymentselectbox += '<option value="' + paymethod["short_payment"][i]["pay_method"] + '-' + paymethod["short_payment"][i]["ID"] + '">' + paymethod["short_payment"][i]['pay_method'] + '-' + paymethod["short_payment"][i]['pay_id'] + '</option>';
+        //        paymenthtml += '<tr><td>' + paymethod['short_payment'][i]['pay_method'] + '</td><td>' + paymethod['short_payment'][i]['pay_id'] + '</td><td onclick="deletePayment(0,' + paymethod["short_payment"][i]["ID"] + ')" style="cursor:pointer">Delete</td></tr>';
+        //    }
+        //}
+        orderhtml += '</table></div>';
+        producthtml += '</table></div>';
+        paymenthtml += '</table></div>';
+        paymentselectbox += '</select>';
+        coupanhtml += '</table></div>';
+        // setTimeout(function(){
+        //   console.log(orderhtml)
+        $("#net_profit").append(totalprofit);
+        $("#myListings").append(producthtml);
+        $("#MyOrders").append(orderhtml);
+        $("#pay_panel").append(paymenthtml);
+        $("#cashout_select_panel").append(paymentselectbox);
+        $("#totalprofit").val(totalprofit);
+        $("#myCoupan").append(coupanhtml);
+        //},2000)
+
+    }
+
+</script>

@@ -1,0 +1,185 @@
+﻿@using Tagbit_V1.Models
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="msvalidate.01" content="CBFBD15F3AA384DFE8ACFB943BF145C2" />
+    <meta name="robots" content="noindex">
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#505BDA">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#505BDA">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#505BDA">
+
+    <meta property="og:image" content="https://www.tagbit.co/images/tagbit-ogimage.png" />
+    <title>Tagbit | Create and Sell custom apparels online</title>
+    <meta name="keywords" content="<%= typeof keyword == " undefined" ? "tagbit.co , download logo free, free logo generator, logo templates" : keyword %>
+    <meta name="description" content="<%= typeof desc == " undefined" ? "Create logo for company online for free, logo designed by professionals only at tagbit.co. Create logo in 4 simple steps. Online logo making software" : desc %>
+    <link rel="icon" type="image/png" href="~/img/favicon.png" sizes="16x16">
+    <link href="~/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="~/css/flaticon.css" rel="stylesheet" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/animate.css" rel="stylesheet" />
+    <link href="~/css/lightcase.css" rel="stylesheet" />
+    <link href="~/css/slick.css" rel="stylesheet" />
+    <link href="~/css/main.css" rel="stylesheet" />
+    <link href="~/css/jquery.feedback_me.css" rel="stylesheet" />
+    <link href="~/css/custom.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/header.min.css">
+
+    <link href="~/css/jquery.toast.css" rel="stylesheet" />
+    @*<link href="~/css/bootstrap.css" rel="stylesheet" />*@
+    <link href="~/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/css/custom.css" rel="stylesheet" />
+    <link href="~/css/jquery.fancybox.css" rel="stylesheet" />
+    <link href="~/css/jquery.fancybox-buttons.css" rel="stylesheet" />
+    <link href="~/css/jquery.fancybox-thumbs.css" rel="stylesheet" />
+    <link href="~/css/select2.css" rel="stylesheet" />
+    <link href="~/css/bootstrap-formhelpers.css" rel="stylesheet" />
+    <link href="~/css/jquery.accordion.css" rel="stylesheet" />
+    <link href="~/css/theme-admin-extension.css" rel="stylesheet" />
+    <link href="~/css/animate.min.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/Sprite.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    @*<script src="~/js/helpers/header.js"></script>*@
+    <style>
+        #overlay {
+            position: fixed;
+            display: none;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 2;
+            cursor: pointer;
+        }
+
+        #text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 50px;
+            color: white;
+            transform: translate(-50%,-50%);
+            -ms-transform: translate(-50%,-50%);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <div class="dark-version"> 
+        <!-- header section  -->
+
+
+        <header class="header-section">
+            <div class="header-bottom" style="max-height:90px">
+                <div class="container">
+                    <nav class="navbar navbar-expand-xl align-items-center" style="border-bottom-left-radius:25px;border-bottom-right-radius:25px;">
+                        <a class="site-logo site-title" href="/"><img src="~/img/logo.png" alt="site-logo" /><span class="logo-icon"><i class="flaticon-fire"></i></span></a>
+
+                        <div>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                            <label>@User.Identity.Name</label>
+                            }
+                        </div>
+                        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="menu-toggle-main"></span>
+                        </button>
+                        @*@if (User.Identity.IsAuthenticated)
+        <img src="~/img/Text.png" />
+                {
+                    <div class="mini-cart header-cart" style="margin-right: 10px;"><button class="header-cart-btn"><a href="/checkout" style="margin-top: 4px;"><i class="flaticon-commerce-and-shopping"></i></a></button></div>
+                }*@
+
+                        <div class="menu-header-right">
+                            <nav role="navigation" id="nav-mobile">
+                                <div id="menuToggle">
+                                    <input type="checkbox" />
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+
+                                    <ul id="menu">
+                                        @if (!User.Identity.IsAuthenticated)
+                                        {
+                                            <li><a href="/">Home</a></li>
+                                            <li><a href="#aboutUs">About</a></li>
+                                            <li><a href="#blog">Blog</a></li>
+                                            <li><a href="#contact-us">Contact</a></li>
+                                            <li><a class="login-open-btn" href="Account/ExternalLogin" style="font-weight:500;font-family:Roboto,sana-serif;color:#212529;padding-left:0px;">Sign In</a></li>
+                                        }
+                                        else
+                                        {
+                                            <li><a href="/">Home</a></li>
+                                            <li><a href="/Home/Dashboard">Dashboard</a></li>
+                                            <li><a href="/Home/Design">Design</a></li>
+                                            @*<li>
+                                                <a class="logoutBtn link" href="Account/LogOff">Logout</a>
+                                            </li>*@
+                                        }
+                                    </ul>
+
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="collapse navbar-collapse" style="height:60px !important">
+                            <ul class="navbar-nav main-menu ml-auto" style="padding-left: 20px;">
+                                @*@if (!User.Identity.IsAuthenticated)
+                                {
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="#aboutUs">About</a></li>
+                                    <li><a href="/blog">Blog</a></li>
+                                    <li><a href="/contact-us">Contact</a></li>
+                                }
+                                else
+                                {*@
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="/Home/Dashboard">Dashboard</a></li>
+                                    <li><a href="/Home/Design">Design</a></li>
+                                    @*<li>
+                                        <a class="logoutBtn link" href="Account/LogOff">Logout</a>
+                                    </li>*@
+                                @*}*@
+                            </ul>
+                            <div class="nav-right d-flex align-items-center" style="float:right;align-items:center;">
+
+                                <ul class="nav-right-menu" style="margin-left:10px;margin-bottom:1px;">
+
+                                    @if (!User.Identity.IsAuthenticated)
+                                    {
+                                      
+                                        <li><a class="login-open-btn" href="Account/ExternalLogin" style="font-weight:500;font-family:Roboto,sana-serif;color:#212529;padding-left:0px;">Sign In</a></li>
+                                    }
+                                    else
+                                    {
+                                       
+                                    }
+
+                                </ul>
+                            </div>
+                        </div><!-- navbar-collapse end -->
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+
+    </div>
+    @RenderBody()
+</body>
+
+<!-- <script src="/js/vendor/bootstrap.min.js"></script> -->
+<!-- <script src="/js/indexprice.js"></script> -->
+

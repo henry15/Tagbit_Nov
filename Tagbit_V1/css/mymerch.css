@@ -1,0 +1,205 @@
+/* Style the tab */
+.merch-tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
+  
+  /* Style the buttons that are used to open the tab content */
+  .merch-tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+  }
+  
+  /* Change background color of buttons on hover */
+  .merch-tab button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create an active/current tablink class */
+  .merch-tab button.active {
+    background-color: #ccc;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    overflow-y: scroll;
+    height: 50%;
+  }
+
+.merch_side{
+    background-color: #f1f1f1;
+    border-radius: 4px;
+    border: 1px solid #d7d7d7;
+    padding: 10px;
+}
+
+/* payment method button styling*/
+div label input {
+  margin-right:100px;
+}
+body {
+   font-family:sans-serif;
+}
+
+.ck-button {
+   margin:4px;
+   background-color:#EFEFEF;
+   border-radius:4px;
+   border:1px solid #D0D0D0;
+   float:left;
+}
+
+.ck-button label {
+   float:left;
+}
+
+.ck-button label span {
+   text-align:center;
+   padding:3px 0px;
+   display:block;
+}
+
+.ck-button label input {
+   position:absolute;
+   top:-20px;
+}
+
+.ck-button input:checked + span {
+   background-color:rgb(92, 69, 221);
+   color:#fff;
+}
+
+.infoclass {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.info-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%; /* Could be more or less, depending on screen size */
+}
+
+.infoBtn{
+  background-color: #fff;
+  border: rgb(37, 37, 37) 2px solid;
+  color: rgb(37, 37, 37);
+  padding: 1px 9px;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius:50%;
+  outline: none;
+}
+
+/* The Close Button */
+.closeInfo {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.closeInfo:hover,
+.closeInfo:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* The Close Button */
+.rmInfo {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.rmInfo:hover,
+.rmInfo:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.paytab{
+  margin-top: 10px;
+  padding: 10px;
+  background: #e8e8e8;
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  overflow:hidden;
+  font-family: 'Roboto';
+}
+
+.paytab span{
+  color:#434343;
+  font-family: 'Roboto';
+  font-size:14px;
+}
+
+.infoclass {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.signupbox{
+  width: 30%;
+  background: #fff;
+  /* top: 0; */
+  /* left: 2px; */
+  margin: auto;
+  margin-top: 143px;
+  padding: 10px;
+  border-radius: 5px;
+  z-index:9999;
+}
+.closeInfo {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.closeInfo:hover,
+.closeInfo:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.expand a {
+  color: #777;
+  padding: 10px;
+  background:  #ededed;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 16px;
+  text-transform: capitalize;
+}

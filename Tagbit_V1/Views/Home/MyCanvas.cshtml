@@ -1,0 +1,247 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE HTML>
+<html>
+<head>
+</head>
+<body>
+    <div id="toolbar">
+        <input id="imageInput" type='file' />
+        <input id="AddText" type='button' value="Add Text" />
+        @*<img class="tool" crossOrigin='anonymous' width=32 height=32 src="~/img/favicon.png" />*@
+    </div><br>
+    <canvas id="canvas" width=350 height=350 style="background-color:#80808029 "></canvas><br>
+
+    <img id="dummyimg" />
+  
+</body>
+</html>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<style>
+    .tool {
+        width: 150px;
+        height: 150px;
+        padding: 0.5em;
+    }
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/3.6.3/fabric.min.js"></script>
+
+<script type="text/javascript">
+
+    var myImg = '../img/product/BlackWTshirtFront.jpg';
+    var canvas = new fabric.Canvas('canvas');
+        //, {
+        //backgroundImage: myImg,
+   // });
+
+    canvas.setBackgroundImage(myImg, canvas.renderAll.bind(canvas), {
+        backgroundImageOpacity: 1,
+        originX: "left",
+        originY: "top",
+        //top: 90,
+        //left: 70,
+        scaleX: 1.1,
+        scaleY: 1.1,
+    });
+    canvas.setWidth(350);
+    canvas.setHeight(350);
+  //  console.log(canvas);
+    //var rect = new fabric.Rect({
+    //    left: 100,
+    //    top: 50,
+    //    fill: 'yellow',
+    //    width: 200,
+    //    height: 100,
+    //    objectCaching: false,
+    //    stroke: 'lightgreen',
+    //    strokeWidth: 4,
+    //});
+
+   // canvas.renderAll();
+    $('#AddText').click(function () {
+        addText();
+    });
+
+
+    function addText() {
+        // Create a new Textbox instance
+        //var text = new fabric.Textbox('Text',
+        //    {
+        //        fontFamily: 'arial black',
+        //        width: 150,
+        //        fontSize: 12,
+        //        Color: 'white',
+        //    });
+
+        canvas.add(new fabric.IText('Tap and Type', {
+            left: 0,
+            top: 0,
+            fontFamily: 'arial black',
+            fill: '#999999',
+            fontSize: 20,
+
+        }));
+
+       // canvas.add(text);
+    }
+
+    function addImg(im) {
+        console.log(im);
+        fabric.Image.fromURL(im, function (oImg) {
+
+            var l = Math.random() * (500 - 0) + 0;
+            var t = Math.random() * (500 - 0) + 0;
+            oImg.scale(0.2);
+            oImg.set({ 'left': l });
+            oImg.set({ 'top': t });
+            canvas.add(oImg);
+        });
+     
+    }
+
+  //  canvas.add(rect);
+
+    let imgInput = document.getElementById('imageInput');
+    imgInput.addEventListener('change', function (e) {
+        // let imageFile = e.target.files[0]; //here we get the image file
+        var url = inputToURL(imgInput);
+        console.log(url);
+        addImg(url);
+    });
+    function inputToURL(inputElement) {
+        var file = inputElement.files[0];
+        return window.URL.createObjectURL(file);
+    }
+   // canvas.add(photo);
+    $('#export').click(function () {
+
+        const canvas = document.getElementById('canvas')
+        const img = canvas.toDataURL('image/png')
+        //
+        document.getElementById('dummyimg').src = img
+    });
+
+
+    // get references to the canvas and its context
+    //var canvas = document.getElementById("canvas");
+    //var ctx = canvas.getContext("2d");
+
+    //// get the offset position of the canvas
+    //var $canvas = $("#canvas");
+    //var Offset = $canvas.offset();
+    //var offsetX = Offset.left;
+    //var offsetY = Offset.top;
+
+    //var x, y, width, height;
+
+    //// select all .tool's
+    //var $tools = $(".tool");
+
+    //let imgInput = document.getElementById('imageInput');
+    //imgInput.addEventListener('change', function (e) {
+    //    // let imageFile = e.target.files[0]; //here we get the image file
+    //    var url = inputToURL(imgInput);
+    //    document.getElementById('dummyimg').src = url;
+    //});
+    //function inputToURL(inputElement) {
+    //    var file = inputElement.files[0];
+    //    return window.URL.createObjectURL(file);
+    //}
+
+
+    ////let imgInput = document.getElementById('imageInput');
+    ////imgInput.addEventListener('change', function (e) {
+    ////    if (e.target.files) {
+    ////        let imageFile = e.target.files[0]; //here we get the image file
+    ////        var reader = new FileReader();
+    ////        reader.readAsDataURL(imageFile);
+    ////        reader.onloadend = function (e) {
+    ////            var myImage = new Image(); // Creates image object
+    ////            myImage.src = e.target.result; // Assigns converted image to image object
+    ////            myImage.className = 'mytool';
+    ////            //myImage.height = 10;
+    ////            //myImage.width = 10;
+    ////            myImage.onload = function (ev) {
+    ////                var myCanvas = document.getElementById("canvas"); // Creates a canvas object
+    ////                var myContext = myCanvas.getContext("2d"); // Creates a contect object
+    ////                //myCanvas.width = 20; // myImage.width; // Assigns image's width to canvas
+    ////                //myCanvas.height = //myImage.height; // Assigns image's height to canvas
+    ////                myContext.drawImage(myImage, 0, 0); // Draws the image on canvas
+    ////                let imgData = myCanvas.toDataURL("image/jpeg", 0.75); // Assigns image base64 string in jpeg format to a variable
+    ////            }
+    ////            $('.mytool').draggable({
+    ////                helper: 'clone',
+    ////            });
+
+    ////        }
+    ////    }
+    ////});
+
+
+    //// console.log(myImage);
+
+    //// make all .tool's draggable
+    //$tools.draggable({
+    //    helper: 'clone',
+    //});
+    //$('#dummyimg').draggable({
+    //});
+    //$('#resizable').resizable({
+    //});
+
+
+    //// assign each .tool its index in $tools
+    //$tools.each(function (index, element) {
+    //    $(this).data("toolsIndex", index);
+    //});
+
+
+    //// make the canvas a dropzone
+    //$canvas.droppable({
+    //    drop: dragDrop,
+    //});
+
+
+    //// handle a drop into the canvas
+    //function dragDrop(e, ui) {
+
+    //    // get the drop point (be sure to adjust for border)
+    //    x = parseInt(ui.offset.left - offsetX) - 1;
+    //    y = parseInt(ui.offset.top - offsetY);
+    //    width = ui.helper[0].width;
+    //    height = ui.helper[0].height;
+
+    //    // get the drop payload (here the payload is the $tools index)
+    //    var theIndex = ui.draggable.data("toolsIndex");
+
+    //    // drawImage at the drop point using the dropped image
+    //    // This will make the img a permanent part of the canvas content
+    //    ctx.drawImage($tools[theIndex], x, y, width, height);
+
+    //}
+
+
+    //// Just testing: Scribble some lines over the dropped img pixels
+    //// In your app you can scribble any way you desire
+    //$('#scribble').click(function () {
+    //    ctx.beginPath();
+    //    ctx.moveTo(x - 20, y - 20);
+    //    ctx.lineTo(x + 10, y + height + 5);
+    //    ctx.lineTo(x + 20, y - 20);
+    //    ctx.lineTo(x + width, y + height + 5);
+    //    ctx.stroke();
+    //    console.log('scribble', x, y, width, height);
+    //});
+
+    //// export the img pixels plus the scribble pixels
+    //// (1) Draw the desired pixels onto a temporary canvas
+    //// (2) Create a new img element from the temp canvas's dataURL
+    //// (3) Append that new img to the #exportedImgs div
+   
+
+</script>

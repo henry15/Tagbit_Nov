@@ -1,0 +1,625 @@
+.otherProductCartItem{
+    height: 200px
+}
+.tooltip{position:fixed}
+header,nav,section,article,aside,footer{display:block}
+.top-countries-list .bfh-selectbox-options{left:0!important}
+ul.nav.nav-pills.nav-top.pull-left > li > div > a{color:#fff;background-color:#000!important}
+#header nav{padding-left:25%;float:none}
+.bfh-selectbox{margin-top:2px !important;}
+#headerAccount{float:right}
+#footer .footer-products{padding-left:0}
+#footer .footer-products a{text-decoration:none;color:#777!important}
+#footer .footer-products a:hover{color:#b3b3b3!important}
+#footer .footer-products li{list-style:none}
+#footer_links_languages a{color:#777!important}
+#footer_links_languages a:hover{color:#b3b3b3!important}
+.remove-left{padding-left:5px}
+.dropdown-menu.subdropdown-menu li a{float:left!important;display:inline-block;clear:none}
+.map-section .featured .why-logo-maker li{list-style:none}
+.map-section .featured .why-logo-maker li .fa-play{font-size:10px;margin-right:7px;position:relative;bottom:2px;color:#b4b5b9}
+.map-section .featured .why-logo-maker li p{display:inline-block;font-size:15px}
+.logobg .logo-get-started{background:#06F;color:#fff;border:1px solid #fff;border-radius:4px;padding:4px 15px;margin-right:5px;margin-top:15px}
+.logomaker-dropdown li i{font-size:30px}
+.why-more{padding-left:90px;margin-bottom:30px;margin-top:30px}
+.faq-more{margin-top:35px}
+.home-view-more,.logo-view-more,.why-view-more,.faq-view-more,.how-works-more{text-align:center;border-radius:50px;color:#fff;background:#505BDA;border:5px solid #0C7D7C;border-radius:3px;padding:12px 60px;font-size:16px;-webkit-transition:all .4s ease-in-out;-moz-transition:all .4s ease-in-out;-o-transition:all .4s ease-in-out;-ms-transition:all .4s ease-in-out}
+.home-know-more{display:block;text-align:center;height:100px;margin-top:40px}
+.home-view-more.transition,.logo-view-more.transition,.why-view-more.transition,.faq-view-more.transition,.how-works-more.transition{color:#fff!important;text-decoration:none!important;-webkit-transform:scale(1.6);-moz-transform:scale(1.1);-o-transform:scale(1.1);transform:scale(1.1);font-size:16px!important}
+a.btn-get-started{-webkit-transition:all .4s ease-in-out;-moz-transition:all .4s ease-in-out;-o-transition:all .4s ease-in-out;-ms-transition:all .4s ease-in-out}
+a.btn-get-started.transition{-webkit-transform:scale(1.6);-moz-transform:scale(1.1);-o-transform:scale(1.1);transform:scale(1.1)}
+a.home-view-more,a.how-works-more{display:inline-block;width:250px;border-radius:50px}
+.logmaker-submenu{display:none;background:#08c!important;color:#fff!important;font-size:40px;margin:10px;min-height:60px;padding:10px;text-align:center}
+#header nav.mega-menu ul.nav-main li.mega-menu-item ul.dropdown-menu{color:#fff}
+.mega-menu-content .sub-menu .mega-menu-sub-title{color:#fff!important;border-bottom:1px solid #fff;padding:5px 10px}
+.logomaker-sub-title .fa-angle-right{margin-left:20px;float:right}
+.mega-menu-content,.mega-menu-fullwidth .dropdown-menu{padding:0!important}
+.mega-menu-content .sub-menu .mega-menu-sub-title:hover{background-color:#fff!important;color:#08c!important}
+.form-group label,.radio label,.checkbox label{color:#444}
+.powered-by{padding-left:10px}
+.powered-by .first-child{padding-top:4px}
+.powered-by li{float:left;list-style:none;padding-right:4px}
+.logomaker-ul{width:500px}
+.logomaker-submenu,.logomaker-submenu img{display:inline-block!important}
+.logomaker-menu{position:absolute!important;left:160px;width:512px;z-index:10;padding-top:8px;background:#00cccb;display:none;border:1px solid #00cccb;border-radius:4px}
+.logomaker-menu img{height:75px;width:auto;display:inline-block}
+.logomaker-img-steps{padding-left:15px;padding-right:3px;font-size:13px;padding-bottom:4px}
+.logo-dropdown{position:relative!important}
+.logo-dropdown li{padding:1px;display:block}
+.logomaker-img li{display:inline-block;padding:5px 0;font-size:13px}
+.clr{clear:both}
+.logomaker-img span{display:block;font-size:11px;text-align:center}
+.panel-primary > .panel-heading + .panel-collapse > .panel-body{border-top:none}
+.panel-primary{border:none}
+.top-page-header{margin-right:0;margin-left:0}
+.top-page-header .phone a{color:#494949;font-size:13px}
+.top-page-header .phone .fa-phone{color:#494949;margin-right:5px;position:relative;top:2px}
+.top-page-header .nav .track-order a{font-size:11px;color:#00cccb;padding:6px 15px}
+.top-page-header .nav .my-cart a{color:silver;font-size:13px}
+.comm-bg{background:#00cccb;background-color:#00cccb}
+.comm-color{color:#00cccb}
+.comm-size{font-size:16px}
+.nav .my-cart a{padding:0 10px!important;margin-top:5px;margin-right:3px}
+.nav .my-cart a:hover{background:#00cccb;background-color:#00cccb;color:#fff}
+.nav .my-cart .fa-shopping-cart{margin-right:5px}
+.comm-bg-imp{background:#00cccb!important;background-color:#00cccb!important;color:#fff!important}
+.owl-pagination{display:none}
+.short.word-rotator-title{font-size:36px;font-weight:500}
+.border-effect:before{content:"";position:absolute;z-index:1;width:96%;bottom:-10px;height:10px;left:2%;border-radius:260px / 5px;box-shadow:0 0 11px rgba(0,0,0,0.3)}
+.border-effect{width:97%;position:relative;overflow:hidden;height:1px;margin:23px auto 8px}
+.border-works-effect:before{content:"";position:absolute;z-index:1;width:96%;bottom:-10px;height:10px;left:2%;border-radius:260px / 5px;box-shadow:0 0 11px rgba(0,0,0,0.3)}
+.border-works-effect{width:75%;position:relative;overflow:hidden;height:3px;margin:23px auto 8px}
+.bfh-countries a.form-control{-webkit-box-shadow:none!important;border:none;background-color:#000;color:#fff}
+.checkoutCountrySelector .bfh-selectbox-option{-webkit-box-shadow:none!important;border:none;background-color:#fff;color:#000!important}
+.page-header-container{padding-right:0}
+.powered-col{float:right}
+.panel{clear:both}
+.cart-border-effect{width:100%!important;margin:20px auto 0}
+.color-dark-comm{color:#505BDA}
+#editorFrame{height:300px;width:100%}
+#editorFrame_cards{height:300px;width:100%}
+.btn-primary2:hover{background:#505BDA;border:1px solid #505BDA}
+.wizard-tabs-column.sticky{position:fixed;top:37px;z-index:1000}
+#headerRecover:hover,#headerSignIn:hover{color:#777!important}
+.comm-bg-gray{background:#fff}
+.comm-bg-gray a,#headerSignIn{color:#00cccb!important}
+#headerSignIn:hover{color:#00cccb!important}
+.dropdown-submenu-logo:hover{color:#fff!important}
+.dropdown-submenu-logo a:hover{color:#fff!important}
+.logomaker-img ul{padding-left:15px}
+a.get-started-btn{text-decoration:none;border:1px solid #00cccb;border-radius:50px;background:#00cccb;font-size:16px!important;color:#fff;text-transform:capitalize!important;padding:8px 60px!important}
+#header nav ul.nav-main li a.get-started-btn:hover{background:#505BDA!important;color:#fff!important;text-decoration:none;border:1px solid #505BDA;border-radius:50px;background-color:#505BDA!important;font-weight:300}
+#header nav ul.nav-main li a.get-started-btn{color:#fff!important;text-decoration:none;border-radius:50px;font-weight:300}
+.tshirt-menu,.mug-menu,.postcard-menu{display:none}
+.tshirt-text{text-align:center;padding-top:50px;font-size:22px;color:#00cccb}
+.panel-title a{display:block;padding:15px;color:#777;border-radius:3px;text-decoration:none;cursor:default}
+.panel-title a:hover{color:#777!important}
+.panel-group .panel{border:1px solid #e6e6e6}
+.panel-body .form-group label{color:#5e5e5e;font-size:13px}
+#s2id_subject-type{display:block}
+.modal-send-msg{color:#fff;background:#505BDA;float:right}
+.modal-send-msg:hover{color:#fff;background:#00cccb}
+#myModal .modal-header{background:#eee;border-top-left-radius:4px;border-top-right-radius:4px}
+#myModalLabel{color:#505BDA}
+.get-started a.btn-watch-video{border:1px solid #fff;border-radius:50px;font-size:16px;margin-right:10px}
+.get-started a.btn-watch-video:hover .fa-play{color:#505BDA}
+.get-started a.btn-watch-video .fa-play{font-size:13px}
+.get-started a.btn-get-started{border:1px solid #505BDA;border-radius:50px;background:#505BDA;font-size:16px}
+.right-move{padding-right:10px}
+.home-intro .get-started{margin-right:0}
+.home-intro p,.home-intro h1{padding-top:10px}
+.why-logo-maker li p{margin-bottom:10px!important}
+.ylogo-maker-desc{padding-left:20px}
+.logomaker-menu-mobile{display:none}
+.whyLogoImage{margin-top:20px}
+.fileUpload{position:relative;overflow:hidden;margin:10px}
+.fileUpload input.upload{position:absolute;top:0;right:0;margin:0;padding:0;font-size:20px;cursor:pointer;opacity:0;filter:alpha(opacity=0)}
+.logomaker-submenu,.logomaker-submenu img{display:inline-block!important}
+.logomaker-menu,.visitingCard-menu,.tshirt-menu,.mug-menu,.postcard-menu{box-shadow:0 2px 15px rgba(0,0,0,0.08);position:absolute!important;left:160px;width:512px;z-index:10;padding-top:6px;background:#00cccb;display:none;border:1px solid #eee;margin-top:1px;border-top:0;border-radius:4px}
+.logomaker-menu{display:block}
+.visitingCard-menu img,.tshirt-header-img{height:75px;width:auto}
+.logomaker-row{height:144px;background:#fff}
+.logomaker-img ol{font-size:12px}
+.logomaker-img ol li{line-height:23px}
+.logo-dropdown{position:relative!important}
+.clr{clear:both}
+.get-started{text-align:center;margin-right:10px;margin-top:20px;padding-bottom:5px;position:relative;top:7px}
+.visitingCard-img{padding:6px;background:#5050ed!important;color:#fff;border-radius:10px;width:60%;margin-top:5px;line-height:15px;margin-left:20%;display:inline-block}
+.visitingCard-img span{display:block;font-size:10px;text-align:left;margin-left:10px}
+.how-it-works-more img{height:100px;width:100px;border:2px solid #ccc;border-style:dashed;border-radius:50%}
+.how-works-profile img{height:200px;display:block;margin:0 auto}
+.how-first-span{font-size:16px;display:block;padding-bottom:10px}
+.how-second-span{display:block;padding-bottom:10px}
+.how-works-desc{background:#eee;padding:30px}
+.ga-menu-item ul.dropdown-menu.dropdownlogout{border-top:none;width:178px;border-radius:0 0 6px 6px;right:8px;background-color:#00cccb!important}
+.top-page-header li.mega-menu-item ul.dropdown-menu.dropdownlogout li{cursor:pointer;line-height:24px;margin:5px}
+.top-page-header li.mega-menu-item ul.dropdown-menu.dropdownlogout li:hover{background:#00cccb;color:#fff}
+.top-page-header li.mega-menu-item ul.dropdown-menu.dropdownlogout li a{color:#FFF;font-weight:400;text-transform:none;position:relative;padding:8px 10px 8px 5px;font-size:1em;border-radius:0}
+.top-page-header li.mega-menu-item.logged a .fa-smile-o{font-size:14px;font-weight:700}
+.top-page-header li.mega-menu-item ul.dropdown-menu.dropdownlogout li a:hover{background:none;color:#01adad!important}
+.top-page-header li.mega-menu-item ul.dropdown-menu.dropdownlogout li:hover{background:none!important;color:#01adad!important}
+.top-page-header li.mega-menu-item ul.dropdown-menu.dropdownlogout li:last-child a{border-bottom:none}
+#header nav.mega-menu ul.nav-main li.itemCount{left:10%}
+#header nav.mega-menu ul.nav-main li.itemCount a{cursor:pointer;text-transform:none;font-weight:400;color:#00cccb!important;font-size:.9em}
+#header nav.mega-menu ul.nav-main li.itemCount a.comm-bg-imp{background-color:transparent!important;background:transparent!important}
+#header nav.mega-menu ul.nav-main li.itemCount a:hover{background-color:transparent;text-decoration:underline}
+.signin-page .row .signin_form{border-radius:10px}
+.signin-page .row .signin_form form{padding:10px}
+.row .input-group-addon{background:#00cccb;color:#fff;border:0}
+.row .input-group-addon.help{background:#fff;border:solid 1px #ccc;border-left:none;cursor:pointer}
+.row .input-group-addon .icon .fa-question-circle{color:#00cccb}
+.row.or_text{text-align:center;margin-bottom:15px;color:#444}
+.row .login-facebook,.row .login-facebook:hover{background-image:-webkit-linear-gradient(top,#19ECEB,#1C9D9B)!important;border-color:#00cccb}
+.row .login-linkedin,.row .login-linkedin:hover{background-image:-webkit-linear-gradient(top,#0DC2C1,#146E6D)!important;border-color:#0DC2C1}
+.row .login-linkedin,.row .login-facebook{padding:6px 12px!important;color:#fff!important;border-radius:4px!important;font-size:14px!important}
+.row .login-linkedin:hover,.row .login-facebook:hover{color:#000!important}
+.row .signup{margin-top:25px}
+.row .signup span{color:#444}
+.row .signup_btn{margin-left:5px}
+.row .sign-up-info{margin-top:15px}
+.row .sign-up-info a:hover{color:#00cccb!important}
+.signin-page .login_header{height:45px;line-height:45px;margin:20px 0 50px;background-image:-webkit-linear-gradient(top,#505BDA,#00cccb);color:#fff;border-radius:4px}
+.row .signup_button{width:100%}
+.row .remember-box{margin-bottom:0}
+.row .social_btns{padding-left:15px!important;padding-right:15px!important}
+#header nav.mega-menu ul.nav-main li.logo-dropdown ul.dropdown-menu{box-shadow:-4px 4px 8px 0 rgba(0,0,0,0.08);padding:0;color:#00cccb;border-bottom-right-radius:0;border-top-right-radius:0;background:#00cccb;background-image:url(../img/menu_img_bg1.png)!important;background-position:center!important;background-repeat:no-repeat!important;text-align:center;background-size:cover!important;border-bottom-left-radius:0}
+#header nav.mega-menu ul.nav-main li.logo-dropdown ul.dropdown-menu li a{color:#fff}
+#header nav ul.nav-main li.logo-dropdown:hover ul.dropdown-menu li:hover{background:#fff!important;color:#00cccb!important}
+#header nav ul.nav-main li.logo-dropdown:hover ul.dropdown-menu li > a:hover{background:#fff!important;color:#00cccb!important}
+#header{background:#fff}
+#footer_links_languages,.powered-col{padding-left:0}
+.footer-copyright .copyright-right{margin-left:47px}
+.signin-page{padding-top:50px}
+#headerSignUpIn{color:#fff;background:#00cccb;border:1px solid #00cccb;border-radius:3px;padding:5px 10px}
+#headerSignUpIn:hover{text-decoration:none;color:#505BDA}
+.visitingCard-ul li{display:inline-block;padding:5px 0;font-size:13px}
+.visitingCard-ul img{display:inline-block}
+.visitingCard-ul{padding-left:15px}
+.visitingCard-ul span{display:block;text-align:center;font-size:11px}
+.curved-image img{width:auto;height:13px;position:relative;top:-83px}
+li.curved-image{margin-left:-20px;margin-right:-20px}
+li.curved-image-visit{margin-left:-33px;margin-right:-20px}
+.logomaker-menu-mobile,.visitingCard-menu-mobile,.tshirt-menu-mobile,.mug-menu-mobile.postcard-menu-mobile{display:none}
+#headerSignUp,#headerSignUp2,#headerRecoverCancel{color:#00cccb!important}
+#fcSlideshow .fc-slides a{cursor:default}
+.page-top .page-common-header{font-size:1.6em;color:#000;padding-left:15px;letter-spacing:normal;font-weight:200}
+.about-us-left{padding-left:30px}
+.page-undr-constrct{margin:0 auto;display:block} 
+.page-header-text{font-size:17px}
+.btn-contact-us{padding:7px 20px;background:#505BDA;color:#fff;float:right;font-size:16px}
+#headerAccountLogout #logoutLabel{font-size:15px !important;font-weight:400;margin-top:-1px}
+.drop-contact{cursor:pointer}
+.drop-blog{cursor:pointer}
+.logomaker-menu{display:none}
+#signUpBtn{background:#505BDA;border:1px solid #505BDA;color:#fff}
+.logoMaker{border-top:6px solid}
+#headerAccountLogout .dropdown-toggle.disabled{padding:7px 4px 3px}
+.modal-body .bootbox-close-button.close{opacity:.4}
+button[data-bb-handler="cancel"]{color:#fff;background:#505BDA;border:1px solid #505BDA}
+button[data-bb-handler="confirm"]{color:#fff;background:#505BDA;border:1px solid #505BDA;color:#fff;background:#505BDA;border:1px solid #505BDA;margin-left:10px;padding:6px 20px}
+.bootbox-alert .modal-footer{padding:10px 15px;outline:none;overflow:hidden}
+#logoutLabel{white-space:nowrap;text-overflow:ellipsis;display:inline-block}
+#headerAccountLogout a.dropdown-toggle.disabled .caret{height:15px}
+.dropdown-toggle.disabled.border-active{border-radius:5px 5px 0 0!important;border-bottom:1px solid rgba(255,255,255,0.2)}
+#headerAccountLogout .dropdown-toggle.disabled.border-active{border-bottom:0!important}
+#headerAccountLogout a{cursor:pointer!important}
+.my-products.border-active a{border-radius:5px 5px 0 0!important}
+.my-products{cursor:default}
+li.divider:hover{background:#e5e5e5}
+.wizard-steps li a{cursor:default}
+#errmsg{color:#db2144;font-size:13px}
+a.dropdown-toggle.border-active{border-radius:5px 5px 0 0!important;padding-bottom:11px;margin-bottom:-1px}
+.input-lg{font-size:15px}
+.modal-content-signup{display:none}
+.create-logo-header.text-left.active{margin-top:30px}
+input[type="password"]{font-size:14px}
+.dropdownlogout li{border-bottom:1px solid rgba(255,255,255,0.2)}
+.dropdownlogout li a{border-bottom:none;display:inline-block}
+.logos-count,.cards-count{margin-left:-1px}
+.whyLogoImage{position:relative}
+.whyLogoImage .why-logo-img{position:absolute;bottom:0}
+.home-get-started{display:block;margin:50px 0}
+a.logo-view-more{display:block;width:250px;margin:0 auto;border-radius:50px}
+.why-view-more{display:block;width:220px;border-radius:50px}
+.faq-view-more{display:block;width:220px;margin:0 auto;border-radius:50px}
+.card-dwld-list{position:relative;left:-2px}
+.curved-image-download img{left:-3px}
+.my-log-list{border-bottom:1px solid rgba(255,255,255,0.2)}
+.my-log-list a{border-bottom:none!important}
+#myProducts ul li a,#myProducts ul li span{display:inline-block}
+.logos-count.active,.cards-count.active{color:#505BDA}
+ul.sidebar-dropdown{background:#F7F7F7;border-radius:4px}
+ul.sidebar-dropdown > li a i{margin-right:5px;font-size:16px}
+ul.sidebar-dropdown > li a{color:#777;border-bottom:1px solid rgba(0,165,164,0.1)!important;padding:15px 20px!important}
+ul.sidebar-dropdown > li a:hover{color:#00cccb}
+ul.sidebar-dropdown > li:last-child a{border-bottom:none!important}
+.faq-more-page .toggle span{display:block}
+.related-links{padding-left:15px;padding-top:10px;padding-bottom:10px;display:block;color:#505BDA;font-size:18px;background:#eee;border-top:5px solid #bbb;border-top-right-radius:4px;border-top-left-radius:4px}
+.sidebar-related-links{box-shadow:3px 3px 4px #e2e2e2;margin-right:-10px}
+.related-links-right-column.sticky{position:fixed;top:71px;right:50px;z-index:1000003}
+.purchase-list-header.stick{position:fixed;top:71px;right:0}
+.purchase-list-header{min-height:210px;position:relative;right:auto}
+.headerAccount-dropdown{display:none}
+.headerAccount-dropdown.active{display:block!important}
+.headerAccount-signin.stylemode>a{padding-bottom:10px;margin-bottom:-1px;border-radius:5px 5px 0 0}
+.logomaker-drpdwn li{float:left;width:100%}
+.logomaker-drpdwn li a{float:left}
+.error-signin{padding-bottom:10px;display:block;color:#C10000}
+.mega-menu-signin.logged a.dropdown-toggle.disabled{cursor:default!important}
+.tips-list a i{font-size:20px}
+.headerAccount-dropdown.active{padding:10px 15px!important}
+.page-span-head{padding:10px 0;display:block;font-size:15px}
+.lost-new-password{margin-bottom:10px;margin-top:10px}
+.works-get-started{display:block;margin:35px auto;text-align:center}
+.unlimited-use-download{display:none}
+.free-logo-accordion{margin-bottom:40px}
+.free-logo-accordion img{height:310px;width:362px;margin:10px auto 0;display:block}
+.online-freelogo-content{background:#eee!important;margin-bottom:25px;margin-top:-35px}
+.main-text-freelogo{font-size:17px;text-align:center;padding:20px 75px}
+.sub-text-freelogo{text-align:center;padding:0 75px 20px}
+.how-it-works-content{margin-bottom:25px}
+.how-it-works-more.border-more{margin-bottom:25px}
+.top-page-header ul.dropdown-menu.user-profile-details{border-top:none;border-radius:0!important;background:#000!important;background-color:#000!important}
+.top-page-header li.mega-menu-item ul.dropdown-menu.user-profile-details{border-top:none!important}
+.top-page-header li.mega-menu-item ul.dropdown-menu.dropdownlogout.user-profile-details li a{padding:10px 10px 10px 5px}
+.top-page-header ul.dropdown-menu.user-profile-details li{border-bottom:1px solid rgba(255,255,255,0.3)}
+.user-profile-details li:last-of-type{border-bottom:none!important}
+.button-dwnld:active{outline:none!important}
+#emailid,#password{width:100%!important}
+.sidebar-active a{color:#00cccb!important}
+.main.checkout-main .form-group input.form-control{width:100%!important}
+.fa-angle-down.inactive,.fa-angle-up.inactive{display:none}
+.headerAccount-signin.login-on .headerAccount-dropdown{display:block!important}
+.headerAccount-signin.login-off .headerAccount-dropdown{display:none}
+.headerAccount-signin .headerAccount-dropdown{display:none!important}
+.signin.logged .user-profile-details{display:none!important}
+.signin.logged.login-on .user-profile-details{display:block!important;margin-top:16px}
+.signin.logged.login-off .user-profile-details{display:none}
+#header nav ul.nav-main li.nav-logo-dropdown:hover > a{padding-bottom:11px;margin-bottom:-1px}
+.headerAccount-signin.login-on > a{padding-bottom:11px;margin-bottom:-1px;border-radius:5px 5px 0 0!important}
+#get-in-touch{cursor:pointer}
+.drop-login-mobile{display:none}
+.reenter-passwprd{padding-top:10px}
+.signout-mobile{display:none}
+.left-top .feedback_trigger_text,.left-bottom .feedback_trigger_text,.right-top .feedback_trigger_text,.right-bottom .feedback_trigger_text{letter-spacing:1px!important;top:38px}
+.dropdown.signout-mobile{display:none!important}
+.drop-login-mobile{display:none!important}
+.signout-mobile.login-show a.dropdown-toggle{text-transform:lowercase!important;font-size:13px!important}
+.feedback_title{display:none}
+.feedback_me_form ul{padding-top:5px}
+.feedback_content ul li{margin-right:29px!important}
+.fm_clean .feedback_trigger_text{right:-16px!important}
+.modal-title{color:#777!important}
+.add-new-div{padding-bottom:10px}
+.visiting-border-effect{background:#f9f9f9}
+.feedback_content.email_present{height:400px!important}
+#header .nav-main .signout-mobile ul.dropdown-menu.active{display:block!important}
+.testimonials-header{font-size: 36px;padding: 50px 0 25px 0;font-weight: 500;color: #0e0e0e;letter-spacing: -1px;}
+.index-inline{display: inline-block;    margin-left: 20px;}
+.contact-span{margin-top: 10px;display: block;margin-bottom: 30px;}
+@media only screen and (max-width: 479px) {
+.powered-col{float:left;padding-left:0;padding-right:0}
+.powered-by{float:none;padding-left:0}
+.powered-by li{float:none;padding:5px 0;display:inline-block}
+.page-header-container ul.nav li{float:none}
+.map-section .featured .why-logo-maker li p{display:inline}
+.why-logo-img{display:block;margin:0 auto}
+.why-logo-div h2{text-align:center;margin:15px 0}
+.home-concept .our-work{margin-top:27px}
+.home-concept strong{margin-top:18px}
+.template-filter{padding-left:0;float:none!important;text-align:center}
+div#s2id_e1{width:100%}
+.free-logo-column{margin-bottom:20px}
+.footer-copyright .copyright-right{margin-left:0}
+.logomaker-menu-mobile{display:block}
+.logomaker-menu,.visitingCard-menu,.tshirt-menu,.postcard-menu{display:none!important}
+.curved-image-mobile{display:none!important}
+.logomaker-img-mobile span,.visitingCard-ul-mobile span{display:block}
+.logomaker-row-mobile li{border-bottom:none!important}
+#header nav ul.nav-main li.logo-dropdown:hover ul.dropdown-menu li:hover{background:#222!important;color:#00cccb}
+#header nav.mega-menu ul.nav-main li.logo-dropdown ul.dropdown-menu{background-image:none!important;background:#171717!important}
+.get-started a.btn-watch-video{font-size:12px}
+.get-started a.btn-get-started{font-size:12px}
+.logomaker-img-mobile img{width:auto;height:75px}
+.logomaker-menu-mobile,.visitingCard-menu-mobile,.tshirt-menu-mobile,.mug-menu-mobile,.postcard-menu-mobile{display:none}
+.logomaker-menu-mobile.active,.visitingCard-menu-mobile.active,.tshirt-menu-mobile.active,.mug-menu-mobile.active,.postcard-menu-mobile.active{display:block}
+.why-view-more{margin:0 auto}
+.why-logo-div h2{text-align:center}
+.whyLogoImage .why-logo-img{text-align:center;display:block;margin:0 auto;position:static}
+.whyLogoImage{height:350px!important}
+.remove-left-mobile{padding-left:5px}
+.wizard-tabs ul li a{line-height:15px}
+.unlimited-use{border:none!important}
+.arrow-left{display:none}
+.buss-card-image{top:29px!important;left:4px!important;height:150px!important}
+.buss-card-image svg{height:155px!important}
+.buss-card-logo-img{height:200px!important;width:250px!important}
+.buss-card-logo-img img{height:245px!important;width:100%!important}
+.sidebar-related-links{display:none}
+.how-it-works-more img{height:40px;width:40px}
+.about-us-left{padding-left:0}
+.nav.nav-pills.nav-top li{float:left}
+.bfh-selectbox .bfh-selectbox-toggle{padding:3px 45px 0!important}
+.wizard-tabs-column{display:none}
+.buss-card-image svg{width:280px!important}
+#header{position:static}
+.body{position:relative;overflow:hidden}
+.feedback_trigger{display:none}
+.home-intro .get-started{text-align:center}
+#header nav.mega-menu ul.nav-main .mega-menu-signin{display:none!important}
+.drop-login-mobile{display:block}
+.logoMaker{border-top:none!important}
+.signout-mobile{display:block}
+body.sticky-menu-active #header .nav-main-collapse,#header.fixed .nav-main-collapse{max-height:100%!important}
+#header nav.mega-menu ul.nav-main li.itemCount{left:0}
+.dropdown.signout-mobile.login-hide{display:none!important}
+.drop-login-mobile.login-show{display:block!important}
+.dropdown.signout-mobile.login-show{display:block!important}
+.drop-login-mobile.login-hide{display:none!important}
+.signout-mobile.login-show a.dropdown-toggle{text-transform:lowercase;font-size:13px}
+}
+@media only screen and (max-width: 320px) {
+#header nav ul.nav-main li.logo-dropdown:hover ul.dropdown-menu li:hover{background:#171717!important;color:#00cccb}
+#header nav.mega-menu ul.nav-main li.logo-dropdown ul.dropdown-menu{background-image:none!important;background:#171717!important}
+.get-started a.btn-watch-video{font-size:12px}
+.get-started a.btn-get-started{font-size:12px}
+.logomaker-img-mobile img,.visitingCard-ul-mobile img{width:auto;height:75px}
+.logomaker-menu-mobile,.visitingCard-menu-mobile,.tshirt-menu-mobile,.mug-menu-mobile,.postcard-menu-mobile{display:none}
+.logomaker-menu-mobile.active,.visitingCard-menu-mobile.active,.tshirt-menu-mobile.active,.mug-menu-mobile.active,.postcard-menu-mobile.active{display:block}
+.logomaker-menu,.visitingCard-menu,.tshirt-menu,.mug-menu,.postcard-menu{display:none!important}
+.why-more{margin:30px auto!important;display:block;text-align:center;padding-left:0!important}
+.why-view-more{padding:10px 30px;display:inline-block}
+.why-logo-div h2{text-align:center}
+.whyLogoImage .why-logo-img{text-align:center;display:block;margin:0 auto;position:static}
+.whyLogoImage{height:350px!important}
+.remove-left-mobile{padding-left:5px!important}
+.wizard-tabs ul li a{line-height:15px}
+.unlimited-use{border:none!important}
+.arrow-left{display:none}
+.buss-card-image{top:29px!important;left:4px!important;height:150px!important}
+.buss-card-image svg{height:155px!important}
+.buss-card-logo-img{height:200px!important;width:250px!important}
+.buss-card-logo-img img{height:245px!important;width:100%!important}
+.sidebar-related-links{display:none}
+.how-it-works-more img{height:40px;width:40px}
+.about-us-left{padding-left:0}
+.nav.nav-pills.nav-top li{float:left}
+.bfh-selectbox .bfh-selectbox-toggle{padding:3px 45px 0!important}
+.wizard-tabs-column{display:none}
+.border-rt-col{border-right:none!important}
+.buss-card-image svg{width:280px!important}
+#header{position:static}
+.body{position:relative;overflow:hidden}
+.feedback_trigger{display:none}
+.home-intro .get-started{text-align:center}
+#header nav.mega-menu ul.nav-main .mega-menu-signin{display:none!important}
+.drop-login-mobile{display:block!important}
+.logoMaker{border-top:none!important}
+.signout-mobile{display:block!important}
+body.sticky-menu-active #header .nav-main-collapse,#header.fixed .nav-main-collapse{max-height:100%!important}
+#header nav.mega-menu ul.nav-main li.itemCount{left:0}
+.dropdown.signout-mobile.login-hide{display:none!important}
+.drop-login-mobile{display:none!important}
+.dropdown.signout-mobile.login-show{display:block!important}
+.drop-login-mobile.login-hide{display:none!important}
+.signout-mobile.login-show a.dropdown-toggle{text-transform:lowercase;font-size:13px}
+}
+@media only screen and (max-width: 375px) {
+.why-more{margin:30px auto!important;display:block;text-align:center;padding-left:0!important}
+.why-view-more{padding:10px 30px;display:inline-block}
+.why-logo-div h2{text-align:center}
+.whyLogoImage .why-logo-img{text-align:center;display:block;margin:0 auto;position:static}
+.whyLogoImage{height:350px!important}
+.remove-left-mobile{padding-left:5px!important}
+.wizard-tabs ul li a{line-height:15px}
+.unlimited-use{border:none!important}
+.arrow-left{display:none}
+.buss-card-image{top:29px!important;left:4px!important;height:150px!important}
+.buss-card-image svg{height:155px!important}
+.buss-card-logo-img{height:200px!important;width:250px!important}
+.buss-card-logo-img img{height:245px!important;width:100%!important}
+.sidebar-related-links{display:none}
+.how-it-works-more img{height:40px;width:40px}
+.about-us-left{padding-left:0}
+.nav.nav-pills.nav-top li{float:left}
+.bfh-selectbox .bfh-selectbox-toggle{padding:3px 45px 0!important}
+.wizard-tabs-column{display:none}
+.border-rt-col{border-right:none!important}
+.buss-card-image svg{width:280px!important}
+#header{position:static}
+.body{position:relative;overflow:hidden}
+.feedback_trigger{display:none}
+.home-intro .get-started{text-align:center}
+#header nav.mega-menu ul.nav-main .mega-menu-signin{display:none!important}
+.drop-login-mobile{display:block!important}
+.logoMaker{border-top:none!important}
+.signout-mobile{display:block!important}
+body.sticky-menu-active #header .nav-main-collapse,#header.fixed .nav-main-collapse{max-height:100%!important}
+#header nav.mega-menu ul.nav-main li.itemCount{left:0}
+.dropdown.signout-mobile.login-hide{display:none!important}
+.drop-login-mobile.login-show{display:block!important}
+.dropdown.signout-mobile.login-show{display:block!important}
+.drop-login-mobile.login-hide{display:none!important}
+.signout-mobile.login-show a.dropdown-toggle{text-transform:lowercase;font-size:13px}
+}
+@media only screen and (max-width: 767px) {
+.powered-by{float:none;padding-left:0}
+.powered-col{float:left;padding-left:0;padding-right:0}
+.free-logo-column{margin-bottom:20px}
+.footer-copyright .copyright-right{margin-left:0}
+.get-started a.btn-watch-video{font-size:14px}
+.get-started a.btn-get-started{font-size:14px}
+.logomaker-menu-mobile{display:block}
+.logomaker-menu{display:none!important}
+#header nav.mega-menu ul.nav-main li.logo-dropdown ul.dropdown-menu{background-image:none!important}
+#header nav ul.nav-main li.logo-dropdown:hover ul.dropdown-menu li:hover{background:#171717!important;color:#00cccb}
+#header nav.mega-menu ul.nav-main li.logo-dropdown ul.dropdown-menu{background-image:none!important;background:#171717!important}
+.get-started a.btn-watch-video{font-size:12px}
+.get-started a.btn-get-started{font-size:12px}
+.logomaker-menu-mobile{display:block}
+.logomaker-menu,.visitingCard-menu,.tshirt-menu,.postcard-menu{display:none!important}
+.curved-image-mobile{display:none!important}
+.logomaker-img-mobile span,.visitingCard-ul-mobile span{display:block}
+.logomaker-row-mobile li{border-bottom:none!important}
+#header nav ul.nav-main li.logo-dropdown:hover ul.dropdown-menu li:hover{background:#222!important;color:#00cccb}
+#header nav.mega-menu ul.nav-main li.logo-dropdown ul.dropdown-menu{background-image:none!important;background:#171717!important}
+.get-started a.btn-watch-video{font-size:12px}
+.get-started a.btn-get-started{font-size:12px}
+.logomaker-img-mobile img{width:auto;height:75px}
+.logomaker-menu-mobile,.visitingCard-menu-mobile,.tshirt-menu-mobile,.mug-menu-mobile,.postcard-menu-mobile{display:none}
+.logomaker-menu-mobile.active,.visitingCard-menu-mobile.active,.tshirt-menu-mobile.active,.mug-menu-mobile.active,.postcard-menu-mobile.active{display:block}
+.logomaker-img-mobile li{display:inline-block;margin-right:10px}
+#header .nav-main .logomaker-img-mobile ul li{display:inline-block}
+.why-view-more{margin:0 auto}
+.why-logo-div h2{text-align:center}
+.whyLogoImage .why-logo-img{text-align:center;display:block;margin:0 auto;position:static}
+.whyLogoImage{height:350px!important}
+.remove-left-mobile{padding-left:5px}
+.arrow-left{display:none}
+.buss-card-image{top:29px!important;left:4px!important;height:150px!important}
+.buss-card-image svg{height:155px!important}
+.buss-card-logo-img{height:200px!important;width:250px!important}
+.buss-card-logo-img img{height:245px!important;width:100%!important}
+.sidebar-related-links{display:none}
+.how-it-works-more img{height:50px;width:50px}
+.about-us-left{padding-left:0}
+.nav.nav-pills.nav-top li{float:left}
+.bfh-selectbox .bfh-selectbox-toggle{padding:3px 45px 0!important}
+#header{position:static}
+.body{position:relative;overflow:hidden}
+.dropdown.signout-mobile.login-hide{display:none!important}
+.drop-login-mobile.login-show{display:block!important}
+.dropdown.signout-mobile.login-show{display:block!important}
+.drop-login-mobile.login-hide{display:none!important}
+.signout-mobile.login-show a.dropdown-toggle{text-transform:lowercase;font-size:13px}
+}
+@media only screen and (min-width: 680px) and (max-width: 979px) {
+.how-it-works-more img{height:70px;width:70px}
+.free-logo-accordion img{height:200px;width:230px}
+.home-intro .get-started{text-align:center}
+#header nav.mega-menu ul.nav-main .mega-menu-signin{display:none!important}
+.drop-login-mobile{display:block!important}
+.feedback_trigger{display:none}
+.logoMaker{border-top:none!important}
+.signout-mobile{display:block!important}
+body.sticky-menu-active #header .nav-main-collapse,#header.fixed .nav-main-collapse{max-height:100%!important}
+#header nav.mega-menu ul.nav-main li.itemCount{left:0}
+}
+@media all and ( max-width: 680px ) {
+.home-intro .get-started{text-align:center}
+#header nav.mega-menu ul.nav-main .mega-menu-signin{display:none!important}
+.drop-login-mobile{display:block}
+.feedback_trigger{display:none}
+.logoMaker{border-top:none!important}
+.signout-mobile{display:block}
+body.sticky-menu-active #header .nav-main-collapse,#header.fixed .nav-main-collapse{max-height:100%!important}
+#header nav.mega-menu ul.nav-main li.itemCount{left:0}
+.dropdown.signout-mobile.login-hide{display:none!important}
+.drop-login-mobile.login-show{display:block!important}
+.dropdown.signout-mobile.login-show{display:block!important}
+.drop-login-mobile.login-hide{display:none!important}
+.signout-mobile.login-show a.dropdown-toggle{text-transform:lowercase;font-size:13px}
+.wizard-steps-cursor{cursor:pointer!important}
+}
+.sticky-logoactive{position:fixed;top:0;z-index:1040;width:100%}
+.logo-all-pdts{background-color:transparent!important;color:gray!important}
+.logo-all-pdts:hover{color:#fff!important}
+#signUpBtn,#changePasswordBtn,.btn-send-message{margin-top:20px!important;margin-bottom:10px!important}
+.top-page-header li.mega-menu-signin a.login_top_pointer{font-size:13px;font-style:normal;line-height:10px;margin-left:3px;margin-right:3px;font-weight:400;padding:5px 13px;text-align:left;cursor:pointer}
+.top-page-header a.dropdown-toggle.extra{display:none}
+.top-page-header .mega-menu-signin{padding-left:0;margin-left:0;margin-top:3px}
+.top-page-header .mega-menu-signin a{color:#fff;background-color:#000!important;border-radius:4px}
+.top-page-header .mega-menu-signin a:hover{color:#fff}
+.top-page-header .mega-menu-signin .dropdown-menu{margin:3px 0 0;right:5px;left:-385px;border-radius:6px 0 6px 6px}
+.top-page-header .mega-menu-signin .fa-user{margin-right:4px}
+.top-page-header .mega-menu-signin .mega-menu-sub-title{margin-bottom:10px;display:block}
+.top-page-header .mega-menu-signin .sign-up-info,.top-page-header .mega-menu-signin .log-in-info{text-align:center;display:block}
+.top-page-header .mega-menu-signin.open a.dropdown-toggle{margin-bottom:-1px;padding-bottom:11px}
+.top-page-header .mega-menu-signin.signin .signin-form{display:block}
+.top-page-header .mega-menu-signin.signin .signup-form,.top-page-header nav.mega-menu ul.nav-main .mega-menu-signin.signin .recover-form{display:none}
+.mega-menu-signin.signin a.border-active{border-radius:4px 4px 0 0}
+.top-page-header .mega-menu-signin.signup .signin-form{display:none}
+.top-page-header .mega-menu-signin.signup .signup-form{display:block}
+.top-page-header .mega-menu-signin.signup .recover-form{display:none}
+.top-page-header .mega-menu-signin.recover .signin-form,.top-page-header .mega-menu-signin.recover .signup-form{display:none}
+.top-page-header .mega-menu-signin.recover .recover-form{display:block}
+.top-page-header .mega-menu-signin.logged .user-avatar .img-thumbnail{float:left;margin-right:15px}
+.top-page-header .mega-menu-signin.logged .user-avatar .img-thumbnail img{max-width:55px}
+.top-page-header .mega-menu-signin.logged .user-avatar strong{color:#111;display:block;padding-top:7px}
+.top-page-header .mega-menu-signin.logged .user-avatar span{color:#666;display:block;font-size:12px}
+.top-page-header .mega-menu-signin.logged .user-avatar p{color:#999;margin:0 0 0 25px;text-align:left}
+.top-page-header .mega-menu-signin.logged .list-account-options{list-style:square;margin-top:6px}
+.top-page-header .mega-menu-signin.logged .list-account-options a:hover{text-decoration:none}
+.top-page-header .mega-menu-signin .dropdownlogout{left:auto;width:178px!important;right:0}
+.top-page-header ul.dropdown-menu{text-shadow:0 -1px 0 rgba(0,0,0,.25)}
+#headerAccountLogout{padding-top:8px;line-height:14px}
+#headerAccountLogout a{cursor:pointer}
+#headerRecover,#headerSignUp,#headerSignIn,#headerRecoverCancel{font-weight:400;text-transform:none;font-size:.9em;background-color:transparent!important;color:gray;border-radius:0}
+@media (max-width: 991px) {
+.mega-menu-signin{display:none!important}
+.top-page-header .mega-menu-signin{margin-right:0}
+.top-page-header .mega-menu-signin a{color:#FFF}
+.top-page-header .mega-menu-signin a .fa-angle-down{display:none!important}
+.top-page-header .mega-menu-signin ul.dropdown-menu{display:block!important;margin:25px 0 0!important;padding:0 0 0 8px;width:100%;right:0}
+.top-page-header .mega-menu-signin ul.dropdown-menu li a{color:#FFF;padding:6px 0!important}
+.top-page-header .mega-menu-signin.logged .user-avatar strong,#header nav.mega-menu ul.nav-main .mega-menu-signin.logged .user-avatar span{color:#FFF!important}
+.top-page-header .mega-menu-signin.logged .list-account-options{margin:25px 0 0!important}
+.top-page-header .mega-menu-signin.logged .list-account-options a{color:#FFF!important}
+.top-page-header .mega-menu-signin.logged .list-account-options a:hover{color:#FFF!important}
+}
+@media (min-width: 992px) {
+.top-page-header .mega-menu-content{text-shadow:none}
+.top-page-header li.mega-menu-item .mega-menu-sub-title{color:#333;display:block;font-size:1em;font-weight:600;padding-bottom:5px;text-transform:uppercase}
+.top-page-header li.mega-menu-item .mega-menu-sub-title .not-included{color:#b7b7b7;display:block;font-size:.8em;font-style:normal;margin:-8px 0 -4px;padding:0}
+.top-page-header li.mega-menu-item ul.dropdown-menu{background:#FFF;border-top:6px solid #00cccb;color:#777;box-shadow:0 20px 45px rgba(0,0,0,0.08)}
+.top-page-header li.mega-menu-item ul.sub-menu{list-style:none;padding:0;margin:0}
+.top-page-header li.mega-menu-item ul.sub-menu a{color:#777;text-shadow:none;margin:0 0 0 -8px;padding:3px 8px;text-transform:none;font-size:.9em;display:block;font-weight:400;border-radius:4px;border:0}
+.top-page-header li.mega-menu-item:hover ul.sub-menu li:hover a:hover{background:#F4F4F4!important;text-decoration:none}
+.top-page-header .mega-menu-content{padding:20px 30px}
+.top-page-header .mega-menu-content:before{display:table;content:"";line-height:0}
+.top-page-header .mega-menu-content:after{display:table;content:"";line-height:0;clear:both}
+}
+.my-logos-list .flip-card-edit{top:33%;position:absolute;left:37%}
+#accordion .panel-two .panel-title a h1{font-size:16px!important;line-height:1.1!important;margin:0!important;color:#777!important;font-weight:400!important;letter-spacing:normal!important}
+#accordionTwo .keyword-lists li h1{color:#777!important;font-family:"Open Sans",Arial,sans-serif!important;font-size:14px!important;margin:0;line-height:24px!important;letter-spacing:normal;font-weight:400}
+#accordionTwo .keyword-lists li:hover h1{color:#fff!important}
+.page-common-header h1{font-size:1.6em;color:#000;padding-left:15px;letter-spacing:normal;font-weight:200}
+.page-top .page-common-header{line-height:1.1em;margin:0}
+ 
+.productdetailbox {
+    .fig .main {
+      height: 300px;
+    }
+    .fig img {
+      width: 100%;
+    }
+  }
+  .thumbnails {
+	overflow: hidden;
+	margin: 1em 0;
+	padding: 0;
+	text-align: center;
+}
+
+.thumbnails li {
+	display: inline-block;
+	width: 60px;
+	margin: 0 5px;
+}
+
+.thumbnails img {
+	display: block;
+	min-width: 100%;
+	max-width: 100%;
+}
+
+.toggle {
+	display: block;
+	margin: 10px auto 1.5em;
+}
+
+
+body {
+	margin: 0;
+	font-family: Arial
+}

@@ -1,0 +1,633 @@
+﻿
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<style>
+    .tool {
+        width: 150px;
+        height: 150px;
+        padding: 0.5em;
+    }
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/3.6.3/fabric.min.js"></script>
+
+
+<script>
+
+        $(document).ready(function () {
+            const params = new URLSearchParams(window.location.search);
+            var imgid = params.get('prod');
+            var myImg = '../img/product/' + imgid + '.jpg';
+        var canvas = new fabric.Canvas('mycanvas');
+    //, {
+    //backgroundImage: myImg,
+    // });
+
+        canvas.setBackgroundImage(myImg, canvas.renderAll.bind(canvas), {
+            backgroundImageOpacity: 1,
+            originX: "left",
+            originY: "top",
+            top: -10,
+            left: -30,
+            scaleX: 1.1,
+            scaleY: 1.1,
+        });
+        canvas.setWidth(300);
+            canvas.setHeight(300);
+
+            canvas.on('object:moving', function (e) {
+                var obj = e.target;
+                // if object is too big ignore
+                if (obj.currentHeight > obj.canvas.height || obj.currentWidth > obj.canvas.width) {
+                    return;
+                }
+                obj.setCoords();
+                // top-left  corner
+                if (obj.getBoundingRect().top < 0 || obj.getBoundingRect().left < 0) {
+                    obj.top = Math.max(obj.top, obj.top - obj.getBoundingRect().top);
+                    obj.left = Math.max(obj.left, obj.left - obj.getBoundingRect().left);
+                }
+                // bot-right corner
+                if (obj.getBoundingRect().top + obj.getBoundingRect().height > obj.canvas.height || obj.getBoundingRect().left + obj.getBoundingRect().width > obj.canvas.width) {
+                    obj.top = Math.min(obj.top, obj.canvas.height - obj.getBoundingRect().height + obj.top - obj.getBoundingRect().top);
+                    obj.left = Math.min(obj.left, obj.canvas.width - obj.getBoundingRect().width + obj.left - obj.getBoundingRect().left);
+                }
+            });
+
+        $(document).on('click', ".deleteBtn", function () {
+          //  console.log(canvas.getActiveObject())
+            if (canvas.getActiveObject()) {
+                canvas.remove(canvas.getActiveObject());
+             //   $(".deleteBtn").remove();
+            }
+        });
+    // canvas.renderAll();
+    $('#AddText').click(function () {
+        addText();
+    });
+
+        $('#AfterPreview').click(function () {
+            document.getElementById('uploadDesign').classList.remove('active')
+          //  document.getElementById('customizePurchase').classList.add('active')
+            document.getElementById('generateLink').classList.add('active')
+
+            document.getElementsByClassName('panel-two')[0].style.display='none'
+          //  document.getElementsByClassName('panel-three')[0].style.display = 'block'
+            document.getElementsByClassName('panel-four')[0].style.display = 'block'
+        });
+
+        $('#beforeProductLink').click(function () {
+            document.getElementById('uploadDesign').classList.add('active')
+          //  document.getElementById('customizePurchase').classList.add('active')
+            document.getElementById('generateLink').classList.remove('active')
+
+            document.getElementsByClassName('panel-two')[0].style.display = 'block'
+          //  document.getElementsByClassName('panel-three')[0].style.display = 'block'
+            document.getElementsByClassName('panel-four')[0].style.display = 'none'
+        });
+
+
+    function addText() {
+        // Create a new Textbox instance
+        //var text = new fabric.Textbox('Text',
+        //    {
+        //        fontFamily: 'arial black',
+        //        width: 150,
+        //        fontSize: 12,
+        //        Color: 'white',
+        //    });
+        var col = $('#color').val();
+        canvas.add(new fabric.IText('Tap and Type', {
+            left: 120,
+            top: 180,
+            fontFamily: 'arial black',
+            fill: col,
+            fontSize: 14,
+            hasBorders: false
+
+        }));
+
+        // canvas.add(text);
+    }
+
+    function addImg(im) {
+        console.log(im);
+        fabric.Image.fromURL(im, function (oImg) {
+
+            var l = Math.random() * (500 - 4) + 0;
+            var t = Math.random() * (500 - 4) + 0;
+            oImg.scale(0.4);
+            oImg.set({ 'left': 150 });
+            oImg.set({ 'top': 100 });
+            canvas.add(oImg);
+        });
+
+    }
+
+    //  canvas.add(rect);
+
+    let imgInput = document.getElementById('imageInput');
+    imgInput.addEventListener('change', function (e) {
+        // let imageFile = e.target.files[0]; //here we get the image file
+        var url = inputToURL(imgInput);
+      //  console.log(url);
+        addImg(url);
+    });
+    function inputToURL(inputElement) {
+        var file = inputElement.files[0];
+        return window.URL.createObjectURL(file);
+    }
+    // canvas.add(photo);
+            $('#preview').click(function () {
+              //  canvas.click();
+
+        const canvas = document.getElementById('mycanvas')
+        const img = canvas.toDataURL('image/png')
+        //
+        document.getElementById('dummyimg').src = img
+    });
+
+    function submitDetail() {
+        //console.log("Transparency :",document.getElementById('svgedit').contentWindow);
+        document.getElementById('svgedit').contentWindow.getTransparency(function (istransparent) {
+            if (istransparent == true) {
+                afterVerification();
+            } else {
+                bootbox.alert("Design quality is not good please re-upload the design")
+            }
+        })
+    }
+    function afterVerification() {
+        var keyword = $("#keyword").val();
+        var description = $("#dname").val();
+        var title = $("#tname").val();
+        var price = $("#mprice").val();
+        var productId = 1;
+        var userid = 'Tagbit_User1';
+        //var base_price = <%=params.base_price%>;
+        var color = 'red'; //productcolor;
+        //var coupanCode;
+        //var coupanPercent;
+        var obj = {
+            "description": description.trim(),
+            "productcolor": color,
+            "title": title.trim(),
+            "price": price,
+            "productid": productId,
+            "userid": userid,
+            "keyword": keyword,
+            "imageSrc": document.getElementById('dummyimg').src
+        }
+
+        //if (cpriceElement.value > 0) {
+        //    if (cprofitElement.value > 0) {
+        //        if ($("#coupancode").val() == "") {
+        //            bootbox.alert("Please generate a coupon");
+        //            return false;
+        //        } else {
+        //            coupanCode = $("#coupancode").val();
+        //            coupanPercent = cpriceElement.value;
+        //            obj.coupancode = coupanCode;
+        //            obj.percent = coupanPercent;
+        //        }
+        //    } else {
+        //        bootbox.alert("Profit should be greater then 0");
+        //        return false
+        //    }
+
+        //}
+        console.log("obj", obj);
+        if (title == '' || description == '' || price == '' || $("#disclaimer").prop('checked') == false) {
+            //if (base_price > price) {
+            //    bootbox.alert("Price should be greater then equal to base price");
+            //} else {
+            //bootbox.alert("Please fill all the details");
+            alert("Please fill all the details");
+            // }
+            document.getElementById("submitdetail").disabled = false;
+        } else {
+            // on();
+            localStorage.setItem(productId, JSON.stringify(obj));   // To be saved in DB after connection is set
+            $("#generatedlink").html('');
+            document.getElementById("submitdetail").disabled = true;
+            //document.getElementById('svgedit').contentWindow.logoDownload(function (base64logo) {
+            //    obj.logo = base64logo;
+            //    document.getElementById('canvasBgFront').contentWindow.downloadimg(function (base64img) {
+            //        obj.front_image = base64img;
+            //            document.getElementById('canvasBgBack').contentWindow.downloadimg(function(back64){
+            //                obj.back_image = back64;
+            //    doPost("/generateProduct", obj, function (resp) {
+
+            //if (resp.status == 200) {
+            //    console.log(resp)
+
+            // Create anchor element.
+            var a = document.createElement('a');
+
+            // Create the text node for anchor element.
+            var link = document.createTextNode("Here is your generated link");
+
+            // Append the text node to anchor element.
+            a.appendChild(link);
+
+            // Set the title.
+            a.title = "This is Link";
+
+            a.target = "_blank";
+
+            // Set the href property.
+            a.href = "../Home/ProductDetails"; //resp.url;
+
+            $("#generatedlink").html(a);
+
+            $("#dname").val('');
+            $("#tname").val('');
+            $("#mprice").val('');
+            document.getElementById("submitdetail").disabled = false;
+            //off()
+            //} else {
+            //    off()
+            //    console.log(resp);
+            //    bootbox.alert("Password entered is invalid.");
+            //}
+            //    }, function (err) {
+            //        off()
+            //        console.log(err);
+            //        bootbox.alert(typeof err == "string" ? err : "Server Error: " + err.error);
+            //    });
+            //});
+            // });
+        }
+    }
+    function changeShirtColor(frontcontent, color) {
+        //document.getElementById('canvasBgFront').contentWindow.init();
+        if (frontcontent) {
+            // $("#canvasBgFront").remove();
+            document.getElementById('canvasBgFront').contentWindow.setImage(frontcontent);
+            //document.getElementById('canvasBgBack').contentWindow.setImage(backcontent);
+            frontImage = frontcontent;
+            productcolor = color;
+
+            //backImage = backcontent;
+            // $("#canvasBgFront").removeAttr("src")
+            //$("#canvasBgFront").attr("src", contents);
+        } else {
+            $("#canvasBgFront").removeAttr("src");
+        }
+    }
+
+        // document.getElementById('svgedit').contentWindow.checkTransparency();
+        $('.custom-logo').click(function () {
+            //    console.log('sdd');
+            $("#imageInput").click();
+        });
+        $("#submitdetail").click(function (e) {
+            e.preventDefault();
+            console.log('h');
+            afterVerification();
+        });
+
+        $("#insertImageToolBar").on("change", function (a) {
+            var files = this.files; //FileList object
+            var output = document.getElementById("result");
+            var file = files[0];
+            if (!file.type.match('image')) {
+                bootbox.alert("Please select an image");
+            } else {
+                var picReader = new FileReader();
+                picReader.addEventListener("load", function (event) {
+                    var picFile = event.target;
+                    var imgObj = svgCanvas.selectorManager.selectors[0].selectedElement;
+                    var items = svgCanvas.getSelectedElems();
+                    var imageData = picFile.result;
+                    var _fn = function () {
+                        var height = $(imgObj).attr("height");
+                        var width = $(imgObj).attr("width");
+                        svgEditor.setImageURL(imageData);
+                        if (imgObj.tagName != "image") {
+                            imgObj.outerHTML = imgObj.outerHTML.replace(/use/g, "image")
+                        }
+                        addWaitingOverlay();
+                        setTimeout(function () {
+                            $(imgObj).attr("height", height);
+                            $(imgObj).attr("width", width);
+                            svgCanvas.clearSelection();
+                            svgEditor.updateCanvas();
+                            removeWaitingOverlay();
+                        }, 10);
+                    };
+                    if (file.type == "image/png" || file.type == "image/gif") {
+                        var img = new Image();
+                        img.src = imageData;
+                        img.onload = function () {
+                            $("body").append("<canvas id='canvasTmpForTrasparancyFix'></canvas>");
+                            var canvas = $('#canvasTmpForTrasparancyFix');
+                            var ctx = canvas[0].getContext('2d');
+                            canvas[0].width = img.width;
+                            canvas[0].height = img.height;
+                            ctx.fillStyle = '#fff';
+                            ctx.fillRect(0, 0, canvas[0].width, canvas[0].height);
+                            ctx.drawImage(img, 0, 0);
+                            imageData = $('#canvasTmpForTrasparancyFix')[0].toDataURL("image/jpeg", 1.0);
+                            $('#canvasTmpForTrasparancyFix').remove();
+                            if (items[0].id == "logo" || $(items).find("svg").length > 0) {
+                                if (typeof loadCard != "undefined") {
+                                    var isSvg = file.type == "image/svg+xml";
+                                    loadCard(undefined, imageData, false);
+                                } else {
+                                    _fn();
+                                }
+                            } else {
+                                _fn();
+                            }
+                            $("#insertImageToolBar").val("");
+                        };
+                    } else {
+                        _fn();
+                    }
+                });
+                picReader.readAsDataURL(file);
+            }
+            e.stopPropagation();
+        });
+    });
+
+</script>
+<style>
+    .designPreviews {
+        border: solid 1px lightgray !important;
+        display: inline-block;
+        padding: 10px;
+        width: 205px;
+        height: 180px;
+        vertical-align: middle;
+        pointer-events: none;
+    }
+
+    #zoomPreviewDiv {
+        height: 300px !important;
+    }
+
+    .zoom-in {
+        height: 449px !important;
+        width: 430px !important;
+        border: none;
+        margin: -48px 32px 0 -53px !important;
+    }
+    label {
+        color: #777777
+    }
+
+    input:not([type="radio"]), textarea {
+        border: 1px solid #e6e6e6;
+    }
+</style>
+<section class="page-top page-top-logo" style="margin-bottom: 0px !important; background-color: #505bda !important">
+    <div class="" style="margin-top:70px;">
+        <div class="row">
+            <div class="col-md-12">
+                <span class="page-common-header" style="color:white; font-weight:700">Create your TShirt</span>
+            </div>
+        </div>
+    </div>
+</section>
+<body>
+    <input type="file" accept="image/*" id="imageInput" class="hide" />
+    <div class=" py-1 my-0 border rounded shadow-sm wizard-tabs" style="margin-top: 50px; margin-left: 0px !important; margin-right: 0px !important">
+        <div class="row" >
+            <section class="col-12">
+                <ul class="wizard-steps" role="tablist">
+                    <li id="uploadDesign" class="active wiz-one" style="background-color:purple;border-color:purple">
+                        <a class="text-center" aria-expanded="false" style="color:purple;border-color:purple; margin-left: 4px">
+                            <span class="badge hidden-xs" style="background-color:#505bda"></span>
+                           Design
+                        </a>
+                    </li>
+         
+        
+                    <li id="generateLink" class="wiz-four" style="background-color:purple;border-color:purple">
+                        <a class="text-center" aria-expanded="true" style="color:purple;border-color:purple">
+                            <span class="badge hidden-xs" style="background-color:#505bda">@*<%= i++ %>*@</span>
+                            Finalize
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <div role="main" class="main create-logo">
+        <div class=" create-card-main">
+            <div class="row">
+                <div class="col-md-12">
+                    @*<% if (params.desc) { %>*@
+                    <div class="create-logo-header"></div>
+                    @*<% } %>*@
+                    <div class="panel-group">
+           
+                        <div class="panel panel-two">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion"
+                                       href="#" class="edit-inactive" style="padding-left:6%">
+                                        Customize your TShirt@*<%= params.name %>*@
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="container panel-body">
+                                <div>
+                                    <div class="row">
+                                        <div class="col3custom" style="float: left; width: 40%; padding-left: 55px">
+                                            @*<input id="imageInput" type='file' value="Upload your design"  /*@
+                                            <span class="custom-logo" style="width:40px; margin-right:10px"><img src="~/img/upload_arrow.png" /></span>
+                                            <span class="" id="AddText" style="width:40px"><img src="~/img/Text.png" /></span>
+
+                                            <select style="width:110px; height:40px" name="color" id="color">
+                                                <option value="black" selected>-Color-</option>
+                                                <option value="black">Black</option>
+                                                <option value="red">Red</option>
+                                                <option value="white">White</option>
+                                                <option value="grey">Grey</option>
+                                                <option value="lightgray">LightGray</option>
+                                                <option value="blue">Blue</option>
+                                                <option value="green">Green</option>
+                                                <option value="purple">Purple</option>
+                                                <option value="yellow">Yellow</option>
+                                                <option value="royalblue">RoyalBlue</option>
+                                            </select>
+                                            <span class="deleteBtn" id="deleteObjectt" style="width:40px; margin-left: 20px;"> <img src="../img/delete.png" /></span>
+                                        </div>
+                                        <div class="col3custom" style="float:left">
+                                            <input id="preview" type='button' class="btn btn-primary pull-righ" value="Preview" style="float: left; padding-left: 20px; background-color: #b308f8a6; width: 20%" />
+                                            @*<img class="tool" crossOrigin='anonymous' width=32 height=32 src="~/img/favicon.png" />*@
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+
+                                    <div class="row">
+                                        <div class="col3custom" style="float: left; width: 50%">
+                                            <div>
+                                                <canvas id="mycanvas" style="background-color: rgb(128 128 128 / 5%); width: 50%; margin-left: 10%"></canvas><br>
+                                            </div>
+                                        </div>
+                                        <div class="" style="float: left; width: 50%; padding-left:0%" id="">
+                                            <img id="dummyimg" width=350 height=350 />
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="panel-footer" style="height:60px">
+                                <button class="btn btn-primary pull-right" id="AfterPreview">Next</button>
+                            </div>
+                        </div>
+                      
+                        <div class="panel panel-four" style="display:none;">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#" class="edit-inactive">
+                                      Enter information
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="panel-body" style="text-align: center;">
+                                <div class="col-md-6" style="text-align:left;border-right: 1px solid #d7d7d7;">
+                                    <label class="pod-labels" for="tname">Title</label>
+                                    <input class="pod-input" type="text" id="tname" name="tname"><br><br>
+                                    <label class="pod-labels" for="dname">Description</label>
+                                    <textarea class="pod-input" id="dname" name="dname" rows="3" cols="50"></textarea>
+                                </div>
+                                <div class="col-md-6" style="text-align:left;">
+                                    <label class="pod-labels" for="mprice">Price</label>
+                                    <input class="pod-input" type="text" id="mprice" name="mprice" placeholder="Enter price in INR" value=""><br>
+                                    <input type="hidden" id="profit" name="profit" />
+                                    Profit: <span id="profitText">0</span> INR<br>
+                                    @*<label class="pod-labels" for="cpercent">Generate Coupon</label><br>
+                                    <input class="pod-input" type="text" style="width:13%;height:15px;" id="cpercent" name="cpercent" value=""> %
+                                    <button class="btn btn-primary" onclick="generateCoupon()" id="generateCoupon">Generate</button>
+                                    <input type="text" readonly style="width:23%;height:15;padding:17px;" id="coupancode">
+                                    <div class="ctooltip" id="tooltipId">
+                                        <button class="btn btn-primary" onclick="copytext()" onmouseout="outFunc()"><span class="tooltiptext" id="myTooltip">Copy to clipboard</span>Copy</button>
+                                    </div>
+                                    <br>
+                                    <input type="hidden" id="cprofit" name="profit" />
+                                    Profit after applying coupon: <span id="cprofitText">0</span> INR<br>*@
+                                    <label class="pod-labels" for="keyword">Keywords</label>
+                                    <input class="pod-input" type="text" id="keyword" name="keyword" />
+                                    <br>
+                                    <br>
+                                    <input type="checkbox" id="disclaimer">&nbsp;&nbsp;
+                                    <label class="pod-labels" for="termandcondiction">I confirm that my design adheres to the ethic design codes of the community guidelines</label>
+                                    <div style="margin-top:20px;">
+                                        <button class="btn btn-primary" id="submitdetail">Submit</button><br>
+                                        <span id="generatedlink"></span>
+                                        <!--<label class="pod-labels" for="colors">Select Colors</label>
+                <div class="round">
+                  <input type="checkbox" id="white_color" style="width:5px;"/>
+                  <label for="white_color" id="whitecolor"></label>
+                  <input type="checkbox" id="blue_color" style="width:5px;"/>
+                  <label for="blue_color" id="bluecolor"></label>
+                  <input type="checkbox" id="black_color" style="width:5px;"/>
+                  <label for="black_color" id="blackcolor"></label>
+                </div>-->
+                                    </div>
+                                    <!-- <input type="checkbox" id="listed_val" name="choice1">
+             <label for="choice1" style="color:rgb(19, 19, 19);"> Want listed for online selling?</label><br>-->
+
+                                </div>
+
+                            </div>
+                            <div class="panel-footer">
+                                <button class="btn btn-primary " id="beforeProductLink">Back</button>
+                            </div>
+                        </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="~/libr/script.js"></script>
+<script>
+    var priceElement = document.getElementById("mprice");
+    var profitElement = document.getElementById("profit");
+    var profitTextElement = document.getElementById("profitText");
+
+    function updateProfit() {
+        var profit = (Number(priceElement.value) - Number(base_price)).toFixed(2); //Function to retrieve product price: for now 350 rupees
+        profitElement.value = profit;
+        if (profit < 0) {
+            profitTextElement.innerText = "No Profits! Increase your price";
+        }
+        else {
+            profitTextElement.innerText = profit;
+        }
+    }
+    priceElement.onchange = updateProfit;
+
+    var cpriceElement = document.getElementById("cpercent");
+    var cprofitElement = document.getElementById("cprofit");
+    var cprofitTextElement = document.getElementById("cprofitText");
+
+    function updateCoupanProfit() {
+        tooltipId.style.display = "none";
+        coupanCode.style.display = "none";
+        $("#coupancode").val('');
+
+        if (Number(cpriceElement.value) > 0) {
+            var coupandeduct = Math.floor((Number(priceElement.value) * (Number(cpriceElement.value) / 100)));
+            var cprofit = (Number(priceElement.value) - Number(base_price) - coupandeduct).toFixed(2); //Function to retrieve product price: for now 350 rupees
+            cprofitElement.value = cprofit;
+            if (cprofit < 0) {
+                cprofitTextElement.innerText = "No Profits! Increase your price";
+            }
+            else {
+                cprofitTextElement.innerText = cprofit;
+            }
+        }
+
+    }
+    cpriceElement.onchange = updateCoupanProfit;
+    var tooltipId = document.getElementById("tooltipId");
+    var coupanCode = document.getElementById("coupancode");
+
+    tooltipId.style.display = "none";
+    coupanCode.style.display = "none";
+    $("#coupancode").val('');
+
+    function generateCoupon() {
+        if (cprofitElement.value > 0) {
+            var length = 9;
+            var result = [];
+            var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            var charactersLength = characters.length;
+            for (var i = 0; i < length; i++) {
+                result.push(characters.charAt(Math.floor(Math.random() * charactersLength)));
+            }
+            var coupancode = result.join('');
+            $("#coupancode").val(coupancode);
+            coupanCode.style.display = "inline-block";
+            tooltipId.style.display = "inline-block";
+        }
+    }
+
+    function copytext() {
+        var copyText = document.getElementById("coupancode");
+        copyText.select();
+        copyText.setSelectionRange(0, 99999);
+        document.execCommand("copy");
+
+        var tooltip = document.getElementById("myTooltip");
+        tooltip.innerHTML = "Copied: " + copyText.value;
+    }
+    function outFunc() {
+        var tooltip = document.getElementById("myTooltip");
+        tooltip.innerHTML = "Copy to clipboard";
+    }
+
+</script>
+
